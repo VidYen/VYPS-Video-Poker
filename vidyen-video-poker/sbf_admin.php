@@ -14,13 +14,13 @@ function SBFA_get_per_page_head_text()
 		),
 		$action.'_'.$slug
 	);
-	$per_page_head_link = "[<a target=_blank href='$per_page_head_url'>".__( 'Install', 'simple-bitcoin-faucets' )."</a>]";
+	$per_page_head_link = "[<a target=_blank href='$per_page_head_url'>".__( 'Install', 'vidyen-video-poker' )."</a>]";
 	if ( is_plugin_active( 'per-page-add-to/perpagehead.php' ) )
 	{
 		$per_page_head_link = '';
 	} 
 //	https://ru.wordpress.org/plugins/per-page-add-to/
-	$ret = __( 'The <a target=_blank href="https://wordpress.org/plugins/per-page-add-to/">Per Page Head Plugin</a> will be handy to equip each faucet page with unique favicon and social sharing tags', 'simple-bitcoin-faucets' );
+	$ret = __( 'The <a target=_blank href="https://wordpress.org/plugins/per-page-add-to/">Per Page Head Plugin</a> will be handy to equip each faucet page with unique favicon and social sharing tags', 'vidyen-video-poker' );
 	$ret .= '. ' . $per_page_head_link;
 	return $ret;
 }
@@ -89,29 +89,29 @@ global $Simple_Bitcoin_Faucets_Options_str;
 settings_fields( $Simple_Bitcoin_Faucets_Options_str );
 do_settings_sections( $Simple_Bitcoin_Faucets_Options_str ); 
 ?>
-    <h3><?php _e( 'Simple Bitcoin Faucets', 'simple-bitcoin-faucets' ); ?></h3>
+    <h3><?php _e( 'Simple Bitcoin Faucets', 'vidyen-video-poker' ); ?></h3>
 	<div id='sfbs_intro'>
 <!--
-		<b><?php _e( 'ATT!', 'simple-bitcoin-faucets' ); ?></b>&nbsp;
+		<b><?php _e( 'ATT!', 'vidyen-video-poker' ); ?></b>&nbsp;
 -->
-		<?php _e( 'In order to use this plugin functionality full-scale you will need to be able to use Remoute Faucets', 'simple-bitcoin-faucets' ); ?>.
+		<?php _e( 'In order to use this plugin functionality full-scale you will need to be able to use Remoute Faucets', 'vidyen-video-poker' ); ?>.
 		<br>
-		<?php _e( 'Please', 'simple-bitcoin-faucets' ); ?>
-		<a target=_new href="<?php _e('https://wmexp.com/remotely-hosted-bitcoin-faucet-examples-list/example-creating-remote-faucet/', 'simple-bitcoin-faucets' ); ?>"><?php _e('Learn how to create Remote Faucet', 'simple-bitcoin-faucets' ); ?></a> ,
-		<a target=_new href="<?php _e('https://wmexp.com/', 'simple-bitcoin-faucets' ); ?>"><?php _e('Visit other Faucets', 'simple-bitcoin-faucets' ); ?></a> ,
-		<a target=_new href="<?php _e('https://wmexp.com/remotely-hosted-bitcoin-faucet-examples-list/', 'simple-bitcoin-faucets' ); ?>"><?php _e('See Examples', 'simple-bitcoin-faucets' ); ?></a> ,
-		<a target=_new href="<?php _e('https://wmexp.com/remotely-hosted-bitcoin-faucets-faq/', 'simple-bitcoin-faucets' ); ?>"><?php _e('Read FAQ', 'simple-bitcoin-faucets' ); ?></a> .
+		<?php _e( 'Please', 'vidyen-video-poker' ); ?>
+		<a target=_new href="<?php _e('https://wmexp.com/remotely-hosted-bitcoin-faucet-examples-list/example-creating-remote-faucet/', 'vidyen-video-poker' ); ?>"><?php _e('Learn how to create Remote Faucet', 'vidyen-video-poker' ); ?></a> ,
+		<a target=_new href="<?php _e('https://wmexp.com/', 'vidyen-video-poker' ); ?>"><?php _e('Visit other Faucets', 'vidyen-video-poker' ); ?></a> ,
+		<a target=_new href="<?php _e('https://wmexp.com/remotely-hosted-bitcoin-faucet-examples-list/', 'vidyen-video-poker' ); ?>"><?php _e('See Examples', 'vidyen-video-poker' ); ?></a> ,
+		<a target=_new href="<?php _e('https://wmexp.com/remotely-hosted-bitcoin-faucets-faq/', 'vidyen-video-poker' ); ?>"><?php _e('Read FAQ', 'vidyen-video-poker' ); ?></a> .
 		<br>
-		<?php _e( 'When you are ready, create Remote Faucets in the', 'simple-bitcoin-faucets' ); ?>&nbsp;
-		<a target=_new href="https://wmexp.com/my-faucets/?furl=<?php echo(urldecode(get_site_url()));?>"><?php _e('Faucet Manager', 'simple-bitcoin-faucets' ); ?></a>.
+		<?php _e( 'When you are ready, create Remote Faucets in the', 'vidyen-video-poker' ); ?>&nbsp;
+		<a target=_new href="https://wmexp.com/my-faucets/?furl=<?php echo(urldecode(get_site_url()));?>"><?php _e('Faucet Manager', 'vidyen-video-poker' ); ?></a>.
 		<br>
-		<?php _e( 'In the mean time for testing purposes please use Stub Faucet', 'simple-bitcoin-faucets' ); ?> 
+		<?php _e( 'In the mean time for testing purposes please use Stub Faucet', 'vidyen-video-poker' ); ?> 
 		( Faucet ID: <b>123456</b> )
 		<br>
 		<?php echo(SBFA_get_per_page_head_text()); ?>
-		<a style='float:right;' onclick='flip_intro(1)' href='javascript:void(0)'><?php _e( 'Hide Intro', 'simple-bitcoin-faucets' ); ?></a>
+		<a style='float:right;' onclick='flip_intro(1)' href='javascript:void(0)'><?php _e( 'Hide Intro', 'vidyen-video-poker' ); ?></a>
 	</div> <!-- sfbs_intro -->
-		<a id='show_intro' style='float:right;display:none;' onclick='flip_intro(0)' href='javascript:void(0)'><?php _e( 'Show Intro', 'simple-bitcoin-faucets' ); ?></a>
+		<a id='show_intro' style='float:right;display:none;' onclick='flip_intro(0)' href='javascript:void(0)'><?php _e( 'Show Intro', 'vidyen-video-poker' ); ?></a>
 		<script>
 		var ls_intro_name = '1.0.13';
 		function flip_intro(do_hide) {
@@ -150,7 +150,7 @@ if(sfbs_cur_tab == null)
 		<div class='sbf_menu_item sbf_menu_item_unselected' id='sbf_m_faucets'  onClick="sfbs_switch_tab('faucets')">Faucets</div>
 		<div class='sbf_menu_item sbf_menu_item_unselected' id='sbf_m_videopoker' onClick="sfbs_switch_tab('videopoker')">VideoPoker</h3></div>
 <!--		
-		<div class='sbf_menu_item sbf_menu_item_unselected' id='sbf_m_more'  onClick="sfbs_switch_tab('more')"><?php _e( 'more', 'simple-bitcoin-faucets' ); ?>...</div>
+		<div class='sbf_menu_item sbf_menu_item_unselected' id='sbf_m_more'  onClick="sfbs_switch_tab('more')"><?php _e( 'more', 'vidyen-video-poker' ); ?>...</div>
 -->
 	</div>
 	<hr>
@@ -224,8 +224,8 @@ if(sfbs_cur_tab == null)
 
 	
 </form>
-<a target=_blank href=https://wordpress.org/support/plugin/simple-bitcoin-faucets/reviews?rate=5#new-post>
-<?php _e( 'Please rate 5 stars if you like this plugin', 'simple-bitcoin-faucets' ); ?></a>.		
+<a target=_blank href=https://wordpress.org/support/plugin/vidyen-video-poker/reviews?rate=5#new-post>
+<?php _e( 'Please rate 5 stars if you like this plugin', 'vidyen-video-poker' ); ?></a>.		
 		
 <script>	
 

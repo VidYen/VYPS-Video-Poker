@@ -3,10 +3,10 @@
  * Plugin Name: VidYen Video Poker
  * Plugin URI: http://vidyen.com
  * Description: A video poker game for the VidYen Point System.
- * Author: Alexey Trofimov
+ * Author: VidYen, LLC
  * Version: 1.1.0
- * Author URI: http://gra4.com
- * Text Domain: simple-bitcoin-faucets
+ * Author URI: http://VidYen.com
+ * Text Domain: vidyen-video-poker
  * License: GPLv2
  * Domain Path: /languages/
 */
@@ -17,13 +17,13 @@ include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'videopoker/poker_WP.ph
 $Simple_Bitcoin_Faucets_Options_str = 'SBFO';
 
 function Simple_Bitcoin_Faucets_load_plugin_textdomain() {
-    load_plugin_textdomain( 'simple-bitcoin-faucets', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+    load_plugin_textdomain( 'vidyen-video-poker', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
 add_action( 'plugins_loaded', 'Simple_Bitcoin_Faucets_load_plugin_textdomain' );
 
 
 
-class Simple_Bitcoin_Faucets_Plugin {
+class VidYen_Video_Poker_Plugin {
 	function __construct() {
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
@@ -52,39 +52,38 @@ class Simple_Bitcoin_Faucets_Plugin {
 	function main_js_shortcode_localize()
 	{
 		$ret = '';
-		$ret .= "\n var sfbg_main_ready = '".__('Ready for the prize?','simple-bitcoin-faucets') ."';";
-		$ret .= "\n var sfbg_main_no = '".__('No thanks','simple-bitcoin-faucets') ."';";
-		$ret .= "\n var sfbg_main_yes = '".__('Yes please!','simple-bitcoin-faucets') ."';";
-		$ret .= "\n var sfbg_main_score = '".__('Score','simple-bitcoin-faucets') ."';";
-		$ret .= "\n var sfbg_main_confirm = '".__('Are you sure','simple-bitcoin-faucets') ."';";
-		$ret .= "\n var sfbg_main_delete = '".__('Delete','simple-bitcoin-faucets') ."';";
-		$ret .= "\n var sfbg_main_add = '".__('Add','simple-bitcoin-faucets') ."';";
+		$ret .= "\n var sfbg_main_ready = '".__('Ready for the prize?','vidyen-video-poker') ."';";
+		$ret .= "\n var sfbg_main_no = '".__('No thanks','vidyen-video-poker') ."';";
+		$ret .= "\n var sfbg_main_yes = '".__('Yes please!','vidyen-video-poker') ."';";
+		$ret .= "\n var sfbg_main_score = '".__('Score','vidyen-video-poker') ."';";
+		$ret .= "\n var sfbg_main_confirm = '".__('Are you sure','vidyen-video-poker') ."';";
+		$ret .= "\n var sfbg_main_delete = '".__('Delete','vidyen-video-poker') ."';";
+		$ret .= "\n var sfbg_main_add = '".__('Add','vidyen-video-poker') ."';";
 		return($ret);
 	}
 
 
-  /*** SHORTCODE INCLUDES ***/
-  include( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/vidyen-video-poker'); //Video poker
-
+/*** SHORTCODE INCLUDES ***/
+include( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/vidyen-video-poker.php'); //Video poker
 
 	function reward_shortcode_localize()
 	{
 		$ret = '';
-		$ret .= "\n RemoteFaucetSurferReward.txt_bonus = '" . __('bonus','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_click_bonus = '" . __('Get your bonus!','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_more_pages = '" . __('Visit %n more pages for the bonus','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_close = '" . __('close','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_info = '" . __('info','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_loading = '" . __('loading','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_shown = '" . __('faucet shown in other window','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_discard_confirm = '" . __('Bonus will be discarded!\n\nAre you sure?','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_thanks_visits = '" . __('<b>Thanks for visiting %n pages!</b>','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_more_seconds = '" . __('%n more seconds to count the page','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_already_visited = '" . __('Already visited!','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_off_now = '" . __('Close for now','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_off_day = '" . __('Off for day','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_off_week = '" . __('Off for week','simple-bitcoin-faucets') ."';";
-		$ret .= "\n RemoteFaucetSurferReward.txt_off_month = '" . __('Off for month','simple-bitcoin-faucets') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_bonus = '" . __('bonus','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_click_bonus = '" . __('Get your bonus!','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_more_pages = '" . __('Visit %n more pages for the bonus','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_close = '" . __('close','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_info = '" . __('info','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_loading = '" . __('loading','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_shown = '" . __('faucet shown in other window','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_discard_confirm = '" . __('Bonus will be discarded!\n\nAre you sure?','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_thanks_visits = '" . __('<b>Thanks for visiting %n pages!</b>','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_more_seconds = '" . __('%n more seconds to count the page','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_already_visited = '" . __('Already visited!','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_off_now = '" . __('Close for now','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_off_day = '" . __('Off for day','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_off_week = '" . __('Off for week','vidyen-video-poker') ."';";
+		$ret .= "\n RemoteFaucetSurferReward.txt_off_month = '" . __('Off for month','vidyen-video-poker') ."';";
 		return($ret);
 	}
 
@@ -171,7 +170,7 @@ class Simple_Bitcoin_Faucets_Plugin {
 		$ret .= "\n".'<div class="sfbg_ln_game_wrap" style="border:0px dotted gray;">';
 		$ret .= "\n".'<div id="sfbg_ln_game" class="sfbg_ln_game" >';
 		$ret .= "\n".'	<center><div id="game" style="width:450px">';
-		$ret .= "\n".'			<div class="sfbg_ln_score">' . __( 'Score', 'simple-bitcoin-faucets' ) . ' : <strong class="score">0</strong></div>';
+		$ret .= "\n".'			<div class="sfbg_ln_score">' . __( 'Score', 'vidyen-video-poker' ) . ' : <strong class="score">0</strong></div>';
 		$ret .= "\n".'			<div class="forecast sfbg_ln_forecast"></div>';
 		$ret .= "\n".'		<div class="grid"></div>';
 		$ret .= "\n".'	</div></center>';
@@ -198,7 +197,7 @@ class Simple_Bitcoin_Faucets_Plugin {
 		$this->options = array_merge(
 		array(
 			'counter-code' => '',
-		), (array) get_option( 'simple-bitcoin-faucets', array() ) );
+		), (array) get_option( 'vidyen-video-poker', array() ) );
 //building params for SBF_CM_referral_process($bcnref,$r_apikey,$r_bonus,$v_apikey,$v_bonus,$v_pages)
 		$bcnref = isset($_GET['BTCREF'])?$_GET['BTCREF']:'';
 		$v_apikey = get_option('sfbg_referral_visits_api_key','');
@@ -236,7 +235,7 @@ class Simple_Bitcoin_Faucets_Plugin {
 
 	function admin_init() {
 //		$this->check_options();
-		$extra_page_content = __( 'Use plugin `Per page head` to create separate favicon for this page, so it will look attractive in the Faucet Lists', 'simple-bitcoin-faucets' );
+		$extra_page_content = __( 'Use plugin `Per page head` to create separate favicon for this page, so it will look attractive in the Faucet Lists', 'vidyen-video-poker' );
 		$extra_page_content = "\n<!-- ".$extra_page_content." -->";
 		if(isset($_GET['fid']))
 		{
@@ -360,7 +359,7 @@ class Simple_Bitcoin_Faucets_Plugin {
 
 	function admin_menu() {
 		$this->register_all_setings();
-		add_options_page( __( 'Simple Bitcoin Faucets', 'simple-bitcoin-faucets' ), __( 'Simple Bitcoin Faucets', 'simple-bitcoin-faucets' ), 'manage_options', 'simple-bitcoin-faucets', array( $this, 'render_options' ) );
+		add_options_page( __( 'Simple Bitcoin Faucets', 'vidyen-video-poker' ), __( 'Simple Bitcoin Faucets', 'vidyen-video-poker' ), 'manage_options', 'vidyen-video-poker', array( $this, 'render_options' ) );
 	}
 
 	function render_options() {
@@ -369,9 +368,9 @@ class Simple_Bitcoin_Faucets_Plugin {
 
 	function add_settings_link( $links ) {
 		$img = '<img style="vertical-align: middle;width:24px;height:24px;border:0;" src="'. plugin_dir_url( __FILE__ ) . 'sbf_lib/bitcoin_64.png'.'"></img>';
-		$settings_link = '<a href="' . admin_url('/options-general.php?page=simple-bitcoin-faucets') . '">' . $img . __( 'Settings' ) . '</a>';
+		$settings_link = '<a href="' . admin_url('/options-general.php?page=vidyen-video-poker') . '">' . $img . __( 'Settings' ) . '</a>';
 		array_unshift($links , $settings_link);
 		return $links;
 	}
 }
-$GLOBALS['simple_bitcoin_faucets_plugin'] = new Simple_Bitcoin_Faucets_Plugin;
+$GLOBALS['VidYen_Video_Poker_Plugin'] = new VidYen_Video_Poker_Plugin;

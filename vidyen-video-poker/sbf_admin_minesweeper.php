@@ -6,14 +6,14 @@
 <?php echo($this->minesweeper_shortcode_localize()); ?> 
 <?php echo($this->minesweeper_shortcode_top()) ?> 
 
- <a href="javascript:document.getElementById('minesweeper_hints').scrollIntoView();"><b><?php _e( 'Scroll to Hints', 'simple-bitcoin-faucets' ); ?></b></a>
+ <a href="javascript:document.getElementById('minesweeper_hints').scrollIntoView();"><b><?php _e( 'Scroll to Hints', 'vidyen-video-poker' ); ?></b></a>
 
 <hr>
 
-<?php _e( 'Use Shortcode', 'simple-bitcoin-faucets' ); ?>  <code>[SBFG_MINESWEEPER]</code>
- <?php _e( 'where you want the game to appear', 'simple-bitcoin-faucets' ); ?> , 
- <?php _e( 'or', 'simple-bitcoin-faucets' ); ?>
- <a href="#" onclick="window.open(top.location.href+'&shortcode=[SBFG_MINESWEEPER]&name=Minesweeper');return false;"><?php _e('Generate test Page', 'simple-bitcoin-faucets' ); ?></a>
+<?php _e( 'Use Shortcode', 'vidyen-video-poker' ); ?>  <code>[SBFG_MINESWEEPER]</code>
+ <?php _e( 'where you want the game to appear', 'vidyen-video-poker' ); ?> , 
+ <?php _e( 'or', 'vidyen-video-poker' ); ?>
+ <a href="#" onclick="window.open(top.location.href+'&shortcode=[SBFG_MINESWEEPER]&name=Minesweeper');return false;"><?php _e('Generate test Page', 'vidyen-video-poker' ); ?></a>
 
 		<hr>
 		
@@ -24,8 +24,8 @@
 		<div sbf_game_settings="minesweeper" style="display:none"></div> 
 		<div id="sbfg_sf_table_minesweeper" class="sbfg_sf_table" >
 			<div id="sbfg_sf_table_header_minesweeper" class="sbfg_sf_table_header">
-				<div class="sbfg_sf_table_header_field"><?php _e( 'Score', 'simple-bitcoin-faucets' ); ?></div>
-				<div class="sbfg_sf_table_header_field"><?php _e( 'Faucet Id', 'simple-bitcoin-faucets' ); ?></div>
+				<div class="sbfg_sf_table_header_field"><?php _e( 'Score', 'vidyen-video-poker' ); ?></div>
+				<div class="sbfg_sf_table_header_field"><?php _e( 'Faucet Id', 'vidyen-video-poker' ); ?></div>
 			</div>
 
 			<div sbf_game="minesweeper" id="sbfg_sf_current_minesweeper" class="sbfg_sf_current sbfg_sf_current_minesweeper"></div>
@@ -57,9 +57,9 @@
 
 <div id='minesweeper_hints' style="clear:both;">
 <hr>
-<b><?php _e( 'Hints', 'simple-bitcoin-faucets' ); ?>:</b><br>
+<b><?php _e( 'Hints', 'vidyen-video-poker' ); ?>:</b><br>
 &nbsp;-&nbsp;
-<?php _e( 'You can use this code to force visitors to reload the page for new game', 'simple-bitcoin-faucets' ); ?>:<code><br>[SBFG_MINESWEEPER]
+<?php _e( 'You can use this code to force visitors to reload the page for new game', 'vidyen-video-poker' ); ?>:<code><br>[SBFG_MINESWEEPER]
 <br>&lt;script&gt;
 <br>&nbsp; &nbsp; &nbsp; document.getElementById('sbfg_ms_newgame').style.display='none';
 <br>&lt;/script&gt;

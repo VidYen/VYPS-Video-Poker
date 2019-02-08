@@ -9,97 +9,97 @@
 ?>
 </script>
 
-<?php _e( 'Based on <a target=_blank href="https://wmexp.com/remotely-hosted-bitcoin-faucet-examples-list/example-surfer-reward/">Surfer Rewarder example</a>', 'simple-bitcoin-faucets' ); ?>.
+<?php _e( 'Based on <a target=_blank href="https://wmexp.com/remotely-hosted-bitcoin-faucet-examples-list/example-surfer-reward/">Surfer Rewarder example</a>', 'vidyen-video-poker' ); ?>.
 
-<?php _e( 'Visitors are motivated to see more of the websites pages if once in a while they are rewarded by Bitcoin Faucet', 'simple-bitcoin-faucets' ); ?>.
-<a href="javascript:document.getElementById('rewarder_hints').scrollIntoView();"><b><?php _e( 'Scroll to Hints', 'simple-bitcoin-faucets' ); ?></b></a>
+<?php _e( 'Visitors are motivated to see more of the websites pages if once in a while they are rewarded by Bitcoin Faucet', 'vidyen-video-poker' ); ?>.
+<a href="javascript:document.getElementById('rewarder_hints').scrollIntoView();"><b><?php _e( 'Scroll to Hints', 'vidyen-video-poker' ); ?></b></a>
 <hr>
 		<?php submit_button(); ?>
-		<?php _e( 'Rewarder <b>Faucet ID</b>', 'simple-bitcoin-faucets' ); ?>:
+		<?php _e( 'Rewarder <b>Faucet ID</b>', 'vidyen-video-poker' ); ?>:
 		<input type="text" id='sfbr_faucet_id' name='sfbr_faucet_id' maxlength="10" 
 		value='<?php echo esc_attr( get_option('sfbr_faucet_id','123456') ); ?>' >
 		</input> 
 		<hr>
-		<p><?php _e( 'Use Shortcode', 'simple-bitcoin-faucets' ); ?> : <code>[SBFR]</code>
-		<?php _e( 'anywhere on the pages you want ', 'simple-bitcoin-faucets' ); ?>
-		<a href='javascript:sfb_r_hightlight_mark()' onmouseover='sfb_r_hightlight_mark()' ><?php _e( 'the Rewarder mark', 'simple-bitcoin-faucets' ); ?></a>
-		<?php _e( 'to appear ( hint: a Widget is a good place )', 'simple-bitcoin-faucets' ); ?>,
-		<?php _e( 'or', 'simple-bitcoin-faucets' ); ?>,
+		<p><?php _e( 'Use Shortcode', 'vidyen-video-poker' ); ?> : <code>[SBFR]</code>
+		<?php _e( 'anywhere on the pages you want ', 'vidyen-video-poker' ); ?>
+		<a href='javascript:sfb_r_hightlight_mark()' onmouseover='sfb_r_hightlight_mark()' ><?php _e( 'the Rewarder mark', 'vidyen-video-poker' ); ?></a>
+		<?php _e( 'to appear ( hint: a Widget is a good place )', 'vidyen-video-poker' ); ?>,
+		<?php _e( 'or', 'vidyen-video-poker' ); ?>,
 		
 		<br><input type="checkbox" id='sfbr_include_all_pages' name='sfbr_include_all_pages' 
 		<?php  checked('on', get_option('sfbr_include_all_pages',''),true ); ?> >
 		</input> 
-		&nbsp;<?php _e( 'Include into all website pages', 'simple-bitcoin-faucets' ); ?> (<?php _e( 'recommended', 'simple-bitcoin-faucets' ); ?>) . 
+		&nbsp;<?php _e( 'Include into all website pages', 'vidyen-video-poker' ); ?> (<?php _e( 'recommended', 'vidyen-video-poker' ); ?>) . 
 		<hr>
-		<?php _e( 'Rewarder mark size', 'simple-bitcoin-faucets' ); ?> :
+		<?php _e( 'Rewarder mark size', 'vidyen-video-poker' ); ?> :
 		<input type="number" min="16" max="128" id='sfbr_mark_size' name='sfbr_mark_size' maxlength="2"  
 		value='<?php echo esc_attr( get_option('sfbr_mark_size','40') ); ?>' >
 		</input> 
 		<hr>
-		<?php _e( 'Rewarder mark horizontal position', 'simple-bitcoin-faucets' ); ?> :
+		<?php _e( 'Rewarder mark horizontal position', 'vidyen-video-poker' ); ?> :
 		<select id='sfbr_mark_h_position' name='sfbr_mark_h_position' >
 			<option value='left' <?php if(get_option('sfbr_mark_h_position','right') == 'left')echo('selected'); ?>  >left</option>
 			<option value='right' <?php if(get_option('sfbr_mark_h_position','right') == 'right')echo('selected'); ?> >right</option>
 		</select>
 		<hr>
-		<?php _e( 'Rewarder mark vertical position', 'simple-bitcoin-faucets' ); ?> :
+		<?php _e( 'Rewarder mark vertical position', 'vidyen-video-poker' ); ?> :
 		<select id='sfbr_mark_v_position' name='sfbr_mark_v_position' >
 			<option value='top' <?php if(get_option('sfbr_mark_v_position','top') == 'top')echo('selected'); ?>  >top</option>
 			<option value='bottom' <?php if(get_option('sfbr_mark_v_position','top') == 'bottom')echo('selected'); ?> >botom</option>
 		</select>		
 		<hr>
-		<?php _e( 'Rewarder mark horizontal offset', 'simple-bitcoin-faucets' ); ?> :
+		<?php _e( 'Rewarder mark horizontal offset', 'vidyen-video-poker' ); ?> :
 		<input type="number" min="0" max="200" id='sfbr_mark_h_offset' name='sfbr_mark_h_offset' maxlength="3"  
 		value='<?php echo esc_attr( get_option('sfbr_mark_h_offset','40') ); ?>' >
 		</input> 
 		<hr>
-		<?php _e( 'Rewarder mark vertical offset', 'simple-bitcoin-faucets' ); ?> :
+		<?php _e( 'Rewarder mark vertical offset', 'vidyen-video-poker' ); ?> :
 		<input type="number" min="0" max="200" id='sfbr_mark_v_offset' name='sfbr_mark_v_offset' maxlength="3"  
 		value='<?php echo esc_attr( get_option('sfbr_mark_v_offset','140') ); ?>' >
 		</input> 		
 		<hr>
-		<?php _e( 'Minimum pages to visit before the Reward is given', 'simple-bitcoin-faucets' ); ?> :
+		<?php _e( 'Minimum pages to visit before the Reward is given', 'vidyen-video-poker' ); ?> :
 		<input type="number" min="1" max="20" id='sfbr_pages_to_visit' name='sfbr_pages_to_visit' maxlength="3"  
 		value='<?php echo esc_attr( get_option('sfbr_pages_to_visit','10') ); ?>' >
 		</input> 		
 		<hr>
-		<?php _e( 'Minimum seconds to stay on a page to count', 'simple-bitcoin-faucets' ); ?> :
+		<?php _e( 'Minimum seconds to stay on a page to count', 'vidyen-video-poker' ); ?> :
 		<input type="number" min="1" max="30" id='sfbr_seconds_on_page' name='sfbr_seconds_on_page' maxlength="3"  
 		value='<?php echo esc_attr( get_option('sfbr_seconds_on_page','5') ); ?>' >
 		</input> 		
 		<hr>
-		<?php _e( 'Count repeated pages', 'simple-bitcoin-faucets' ); ?> :
+		<?php _e( 'Count repeated pages', 'vidyen-video-poker' ); ?> :
 		<select id='sfbr_allow_repeats' name='sfbr_allow_repeats' >
-			<option value='true' <?php if(get_option('sfbr_allow_repeats','true') == 'true')echo('selected'); ?>  ><?php _e( 'Yes', 'simple-bitcoin-faucets' ); ?></option>
-			<option value='false' <?php if(get_option('sfbr_allow_repeats','true') == 'false')echo('selected'); ?> ><?php _e( 'No', 'simple-bitcoin-faucets' ); ?></option>
+			<option value='true' <?php if(get_option('sfbr_allow_repeats','true') == 'true')echo('selected'); ?>  ><?php _e( 'Yes', 'vidyen-video-poker' ); ?></option>
+			<option value='false' <?php if(get_option('sfbr_allow_repeats','true') == 'false')echo('selected'); ?> ><?php _e( 'No', 'vidyen-video-poker' ); ?></option>
 		</select>	
 		<hr>		
-		<?php _e( 'Count reloaded pages', 'simple-bitcoin-faucets' ); ?> :
+		<?php _e( 'Count reloaded pages', 'vidyen-video-poker' ); ?> :
 		<select id='sfbr_allow_reloads' name='sfbr_allow_reloads' >
-			<option value='true' <?php if(get_option('sfbr_allow_reloads','false') == 'true')echo('selected'); ?>  ><?php _e( 'Yes', 'simple-bitcoin-faucets' ); ?></option>
-			<option value='false' <?php if(get_option('sfbr_allow_reloads','false') == 'false')echo('selected'); ?> ><?php _e( 'No', 'simple-bitcoin-faucets' ); ?></option>
+			<option value='true' <?php if(get_option('sfbr_allow_reloads','false') == 'true')echo('selected'); ?>  ><?php _e( 'Yes', 'vidyen-video-poker' ); ?></option>
+			<option value='false' <?php if(get_option('sfbr_allow_reloads','false') == 'false')echo('selected'); ?> ><?php _e( 'No', 'vidyen-video-poker' ); ?></option>
 		</select>			
 		
 		
 		<?php submit_button(); ?>
 <hr>
 <div id='rewarder_hints'>
-<b><?php _e( 'Hints', 'simple-bitcoin-faucets' ); ?>:</b><br>
+<b><?php _e( 'Hints', 'vidyen-video-poker' ); ?>:</b><br>
 &nbsp;-&nbsp;
-<?php _e( 'Use', 'simple-bitcoin-faucets' ); ?> 
+<?php _e( 'Use', 'vidyen-video-poker' ); ?> 
  <code><?php echo(get_site_url())?></code> 
- <?php _e( 'as Faucet/App ULR for your Faucets', 'simple-bitcoin-faucets' ); ?>.
+ <?php _e( 'as Faucet/App ULR for your Faucets', 'vidyen-video-poker' ); ?>.
 <hr>
 &nbsp;-&nbsp;
-<?php _e( 'While configuring real Faucets in the Faucet Manager, come up with attractive Faucet Names', 'simple-bitcoin-faucets' ); ?>
- <?php _e( 'to bring more users from the Faucet Lists', 'simple-bitcoin-faucets' ); ?>,
- <?php _e( 'like', 'simple-bitcoin-faucets' ); ?>
- <a target=_blank href="<?php _e( 'https://wmexp.com/', 'simple-bitcoin-faucets' ); ?>" ><?php _e( 'here', 'simple-bitcoin-faucets' ); ?></a>
- <?php _e( 'and', 'simple-bitcoin-faucets' ); ?>
- <a  target=_blank href="<?php _e( 'https://cryptoo.me/rotator/', 'simple-bitcoin-faucets' ); ?>"><?php _e( 'here', 'simple-bitcoin-faucets' ); ?></a>.
+<?php _e( 'While configuring real Faucets in the Faucet Manager, come up with attractive Faucet Names', 'vidyen-video-poker' ); ?>
+ <?php _e( 'to bring more users from the Faucet Lists', 'vidyen-video-poker' ); ?>,
+ <?php _e( 'like', 'vidyen-video-poker' ); ?>
+ <a target=_blank href="<?php _e( 'https://wmexp.com/', 'vidyen-video-poker' ); ?>" ><?php _e( 'here', 'vidyen-video-poker' ); ?></a>
+ <?php _e( 'and', 'vidyen-video-poker' ); ?>
+ <a  target=_blank href="<?php _e( 'https://cryptoo.me/rotator/', 'vidyen-video-poker' ); ?>"><?php _e( 'here', 'vidyen-video-poker' ); ?></a>.
 <hr>
 &nbsp;-&nbsp;
-<?php _e( 'For non-Wordpress pages of your website use the code', 'simple-bitcoin-faucets' ); ?>:
+<?php _e( 'For non-Wordpress pages of your website use the code', 'vidyen-video-poker' ); ?>:
 <br><code><?php 
 $t = $this->reward_shortcode(0);
 $t = trim($t,"\n");
@@ -123,7 +123,7 @@ function sfb_r_hightlight_mark()
 
 function sfb_r_before_off()
 {
-	alert('<?php _e( 'This functionality is disabled in the administrative interface', 'simple-bitcoin-faucets' ); ?>');
+	alert('<?php _e( 'This functionality is disabled in the administrative interface', 'vidyen-video-poker' ); ?>');
 	return false;
 }
 

@@ -3,13 +3,13 @@
 
 <link rel="stylesheet" href="<?php echo(plugin_dir_url( __FILE__ )) ?>lines/lines.css">   
 <script src="<?php echo(plugin_dir_url( __FILE__ )) ?>lines/lines.js"></script>
- <a href="javascript:document.getElementById('lines_hints').scrollIntoView();"><b><?php _e( 'Scroll to Hints', 'simple-bitcoin-faucets' ); ?></b></a>
+ <a href="javascript:document.getElementById('lines_hints').scrollIntoView();"><b><?php _e( 'Scroll to Hints', 'vidyen-video-poker' ); ?></b></a>
 
 <hr>
-<?php _e( 'Use Shortcode', 'simple-bitcoin-faucets' ); ?>  <code>[SBFG_LINES]</code> 
- <?php _e( 'where you want the game to appear', 'simple-bitcoin-faucets' ); ?> , 
- <?php _e( 'or', 'simple-bitcoin-faucets' ); ?>
- <a href="#" onclick="window.open(top.location.href+'&shortcode=[SBFG_LINES]&name=Lines');return false;"><?php _e('Generate test Page', 'simple-bitcoin-faucets' ); ?></a>
+<?php _e( 'Use Shortcode', 'vidyen-video-poker' ); ?>  <code>[SBFG_LINES]</code> 
+ <?php _e( 'where you want the game to appear', 'vidyen-video-poker' ); ?> , 
+ <?php _e( 'or', 'vidyen-video-poker' ); ?>
+ <a href="#" onclick="window.open(top.location.href+'&shortcode=[SBFG_LINES]&name=Lines');return false;"><?php _e('Generate test Page', 'vidyen-video-poker' ); ?></a>
 
 		<hr>
 		
@@ -20,8 +20,8 @@
 		<div sbf_game_settings="lines" style="display:none"></div>
 		<div id="sbfg_sf_table_lines" class="sbfg_sf_table" >
 			<div id="sbfg_sf_table_header_lines" class="sbfg_sf_table_header">
-				<div class="sbfg_sf_table_header_field"><?php _e( 'Score', 'simple-bitcoin-faucets' ); ?></div>
-				<div class="sbfg_sf_table_header_field"><?php _e( 'Faucet Id', 'simple-bitcoin-faucets' ); ?></div>
+				<div class="sbfg_sf_table_header_field"><?php _e( 'Score', 'vidyen-video-poker' ); ?></div>
+				<div class="sbfg_sf_table_header_field"><?php _e( 'Faucet Id', 'vidyen-video-poker' ); ?></div>
 			</div>
 
 			<div sbf_game="lines" id="sbfg_sf_current_lines" class="sbfg_sf_current sbfg_sf_current_lines"></div>
@@ -43,7 +43,7 @@
 <div class="sfbg_ln_game_wrap" style="border:0px dotted gray;">
 <div id="sfbg_ln_game" class="sfbg_ln_game" >
 	<div id="game">
-			<div class="sfbg_ln_score"><?php _e( 'Score', 'simple-bitcoin-faucets' ); ?> : <strong class="score">0</strong></div>
+			<div class="sfbg_ln_score"><?php _e( 'Score', 'vidyen-video-poker' ); ?> : <strong class="score">0</strong></div>
 			<div class="forecast sfbg_ln_forecast"></div>
 		<div class="grid"></div>		
 	</div>
@@ -56,15 +56,15 @@
 
 <div id='lines_hints' style="clear:both;"> 
 <hr>
-<b><?php _e( 'Hints', 'simple-bitcoin-faucets' ); ?>:</b><br>
+<b><?php _e( 'Hints', 'vidyen-video-poker' ); ?>:</b><br>
 &nbsp;-&nbsp;
-<?php _e( 'You may use same Faucet as a reward for different scores', 'simple-bitcoin-faucets' ); ?>.
- <?php _e( 'However remember - every Faucet is a link to your page', 'simple-bitcoin-faucets' ); ?>
- <?php _e( 'to bring more users from the Faucet Lists', 'simple-bitcoin-faucets' ); ?>
- <?php _e( 'like', 'simple-bitcoin-faucets' ); ?>
- <a target=_blank href="<?php _e( 'https://wmexp.com/', 'simple-bitcoin-faucets' ); ?>" ><?php _e( 'here', 'simple-bitcoin-faucets' ); ?></a>
- <?php _e( 'and', 'simple-bitcoin-faucets' ); ?>
- <a  target=_blank href="<?php _e( 'https://cryptoo.me/rotator/', 'simple-bitcoin-faucets' ); ?>"><?php _e( 'here', 'simple-bitcoin-faucets' ); ?></a>.
+<?php _e( 'You may use same Faucet as a reward for different scores', 'vidyen-video-poker' ); ?>.
+ <?php _e( 'However remember - every Faucet is a link to your page', 'vidyen-video-poker' ); ?>
+ <?php _e( 'to bring more users from the Faucet Lists', 'vidyen-video-poker' ); ?>
+ <?php _e( 'like', 'vidyen-video-poker' ); ?>
+ <a target=_blank href="<?php _e( 'https://wmexp.com/', 'vidyen-video-poker' ); ?>" ><?php _e( 'here', 'vidyen-video-poker' ); ?></a>
+ <?php _e( 'and', 'vidyen-video-poker' ); ?>
+ <a  target=_blank href="<?php _e( 'https://cryptoo.me/rotator/', 'vidyen-video-poker' ); ?>"><?php _e( 'here', 'vidyen-video-poker' ); ?></a>.
 
 
 <hr>

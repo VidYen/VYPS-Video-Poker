@@ -63,8 +63,63 @@ class VidYen_Video_Poker_Plugin {
 	}
 
 
-/*** SHORTCODE INCLUDES ***/
-include( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/vidyen-video-poker.php'); //Video poker
+  function videopoker_shortcode_top()
+  {
+    $ret = '';
+
+    $ret .= "\n<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css'>";
+    $ret .= "\n<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>";
+    $ret .= "\n<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>";
+
+    //do it once, do it here so can be defined in standalone version, poker_util.php
+    if(!function_exists ( 'poker_get_main_url' ))
+    {
+      function poker_get_main_url() //
+      {
+        return(plugin_dir_url( __FILE__ ).'videopoker/');
+      }
+    }
+
+    include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'videopoker/poker_get_settings.php');
+    include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'videopoker/poker_util.php');
+    $ret .= settings_to_js();
+    if($stop_if_adblock)
+      $ret .= "\n<script src='" . plugin_dir_url( __FILE__ ) . "videopoker/lib/advertisment.js'></script>\n";
+    include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'videopoker/poker_lang_WP.php');
+    $ret .= poker_text_to_js();
+
+    $ret .= "\n<link href='" . plugin_dir_url( __FILE__ ) . "videopoker/lib/messagebox.css' rel='stylesheet'>";
+    $ret .= "\n<script src='" . plugin_dir_url( __FILE__ ) . "videopoker/lib/messagebox.js'></script>";
+    $ret .= "\n<link href='" . plugin_dir_url( __FILE__ ) . "videopoker/poker.css' rel='stylesheet'>";
+    $ret .= "\n<script src='" . plugin_dir_url( __FILE__ ) . "videopoker/poker.js'></script>	";
+    $ret .= "\n<script src='" . plugin_dir_url( __FILE__ ) . "videopoker/poker_util.js'></script>";
+    return($ret);
+  }
+
+  function videopoker_shortcode_body()
+  {
+    $ret = '';
+    $ret .= "\n";
+    include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'videopoker/poker_WP.php');
+    SBFG_WP_poker_settings_to_session();
+    $ret .= SBFG_WP_get_poker_body();
+    return($ret);
+  }
+
+  function videopoker_shortcode_localize()
+  {
+    $ret = '';
+    return($ret);
+  }
+
+  function videopoker_shortcode( $atts )
+  {
+    $ret = '';
+    $ret .= $this->videopoker_shortcode_localize();
+    $ret .= $this->videopoker_shortcode_top();
+    $ret .= $this->videopoker_shortcode_body();
+    return($ret);
+  }
 
 	function reward_shortcode_localize()
 	{
@@ -190,47 +245,6 @@ include( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/vidyen-video-poker.p
             );
             add_option('plugin_abbr_op', $op);
         }
-	}
-
-
-	function init() {
-		$this->options = array_merge(
-		array(
-			'counter-code' => '',
-		), (array) get_option( 'vidyen-video-poker', array() ) );
-//building params for SBF_CM_referral_process($bcnref,$r_apikey,$r_bonus,$v_apikey,$v_bonus,$v_pages)
-		$bcnref = isset($_GET['BTCREF'])?$_GET['BTCREF']:'';
-		$v_apikey = get_option('sfbg_referral_visits_api_key','');
-		$v_bonus = get_option('sfbg_referral_visit_bonus','10');
-		$v_pages = get_option('sfbg_referral_visit_pages','5');
-		$v_interval = get_option('sfbg_referral_visit_time','30');
-		$v_forbidden_a = get_option('sfbg_referral_forbidden_bitcoin_addresses','');
-		$v_forbidden_ip = get_option('sfbg_referral_forbidden_ip_addresses','');
-		SBF_CM_referral_visit_process($bcnref,$v_apikey,$v_bonus,$v_pages,$v_interval,$v_forbidden_a,$v_forbidden_ip);
-		SBFG_WP_get_poker_init();
-	}
-
-	function user_registered($user_id, $password='', $meta=array())  {
-		$bcn_addr_referrer = $_SESSION['BCNREF_ADDR'];
-		update_user_meta( $user_id, 'BCNREF_ADDR', $bcn_addr_referrer );
-	}
-
-	function user_login( $user_login, $user){
-		$user_id = $user->ID;
-		$bcn_addr_referrer = get_user_meta( $user_id, 'BCNREF_ADDR')[0];
-		delete_user_meta( $user_id, 'BCNREF_ADDR');
-		if( (SBF_CM_referral_is_valid_address($bcn_addr_referrer))  )
-		{
-			$_SESSION['BCNREF_ADDR'] = $bcn_addr_referrer; //for log
-			$r_apikey = get_option('sfbg_referral_register_api_key','');
-			$r_bonus = get_option('sfbg_referral_registration_bonus','50');
-			if( (strlen($r_apikey) == 40) && ($r_bonus > 0) ) //configured
-			{
-				SBF_CM_referral_send($r_apikey,$bcn_addr_referrer,$r_bonus);
-				SBF_CM_referral_log($r_bonus,'R');
-			}
-			unset($_SESSION['BCNREF_ADDR']);//just in case
-		}
 	}
 
 	function admin_init() {

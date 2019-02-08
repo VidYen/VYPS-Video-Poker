@@ -56,9 +56,9 @@ function videopoker_shortcode_localize()
 function videopoker_shortcode( $atts )
 {
   $ret = '';
-  $ret .= $this->videopoker_shortcode_localize();
-  $ret .= $this->videopoker_shortcode_top();
-  $ret .= $this->videopoker_shortcode_body();
+  $ret .= videopoker_shortcode_localize();
+  $ret .= videopoker_shortcode_top();
+  $ret .= videopoker_shortcode_body();
   return($ret);
 }
 

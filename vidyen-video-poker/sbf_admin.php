@@ -85,9 +85,9 @@ margin: 10px;
 <?php 
 global $options;
 print_r($options); 
-global $Simple_Bitcoin_Faucets_Options_str;
-settings_fields( $Simple_Bitcoin_Faucets_Options_str );
-do_settings_sections( $Simple_Bitcoin_Faucets_Options_str ); 
+global $VidYen_Video_Poker_Options_str;
+settings_fields( $VidYen_Video_Poker_Options_str );
+do_settings_sections( $VidYen_Video_Poker_Options_str ); 
 ?>
     <h3><?php _e( 'Simple Bitcoin Faucets', 'vidyen-video-poker' ); ?></h3>
 	<div id='sfbs_intro'>

@@ -1,5 +1,9 @@
 <?php
 
+/*** Shortcode goes here like civilized nations do ***/
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 function videopoker_shortcode_top()
 {
   $ret = '';
@@ -57,3 +61,5 @@ function videopoker_shortcode( $atts )
   $ret .= $this->videopoker_shortcode_body();
   return($ret);
 }
+
+add_shortcode('vidyen-video-poker', 'videopoker_shortcode');

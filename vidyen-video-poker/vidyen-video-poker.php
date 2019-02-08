@@ -11,7 +11,7 @@
  * Domain Path: /languages/
 */
 
-include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'videopoker/poker_WP.php'); //SBFG_WP_get_poker_init
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/videopoker/poker_WP.php'); //SBFG_WP_get_poker_init
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vidyen-video-poker.php'); //Shortcode Init
 
 function register_all_setings()

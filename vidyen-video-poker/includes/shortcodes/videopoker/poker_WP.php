@@ -80,17 +80,6 @@ background:url(\"" . poker_get_main_url() . "img/bg2.jpg\");
 $VYPS_power_row
 <script>vp_trof_set_bg();WP_vp_trof_update();</script>
 <script>
-  jQuery(document).ready(function($) {
-   var data = {
-     'action': 'vyps_run_deduct_action',
-     'bet_amount': 100,
-     'pointid': '3',
-   };
-   // since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
-   jQuery.post(ajaxurl, data, function(response) {
-     output_response = JSON.parse(response);
-   });
-  });
 </script>
 </center></div>
 	";

@@ -4,7 +4,9 @@ var trof_wins_after_bonus = 0; 	//
 
 var newdeal    = 1;                                    //  1 if ready for new deal, 0 if ready to trade, 2 if out of money
 var bet        = 5;                                    //  Stores the amount of next bet
-var winnings   = 0;                                  //  Stores cumulative winnings
+var winnings   = 0;                                    //  Stores cumulative winnings
+var previous_winnings = 0;                              // Because cumulative winnings is always a gods damn bad idea.
+var to_add_winnings = 0;                                //what we will feed through ajax
 var back       = new Image(73,97);                     //  Image for back of card
 var imgoffset     = 0;                                 //  First card should be (imgoffset + 1)th image on the HTML page
 
@@ -110,9 +112,23 @@ function dealcards(form)
     form_info.value   = poker_text_click_cards_to_reade;        //  Update info box
     bet               = form_bet.value;                             //  Get amount to bet...
     winnings         -= bet;                                        //  ...deduct it from winnings...
+    previous_winnings = winnings;                                   //Because we have to know how much we had before to add
     form_money.value  = winnings;                                   //  ...and update winnings
     form_deal.value   = poker_text_poker_trade;                          //  Change description on button
     form_bet.disabled = true;                                       //  Make 'bet' text box editable again
+
+    //Deduct
+    jQuery(document).ready(function($) {
+     var data = {
+       'action': 'vyps_run_deduct_action',
+       'bet_amount': bet,
+       'pointid': '3',
+     };
+     // since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+     jQuery.post(ajaxurl, data, function(response) {
+       output_response = JSON.parse(response);
+     });
+    });
   }
 
   form_deal.disabled = true;
@@ -240,6 +256,25 @@ console.info(data);
 		if ( won > 0 )
 		{
 			jQuery("#vp_balance").effect( "highlight", {color:'lightgreen'}, 1000 );
+
+      //In theory if this only fires if they won so should be positive
+      to_add_winnings = winnings - previous_winnings;
+
+
+        //Add winnings if there are any
+        jQuery(document).ready(function($) {
+         var data = {
+           'action': 'vyps_run_add_action',
+           'win_amount': to_add_winnings,
+           'pointid': '3',
+         };
+         // since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+         jQuery.post(ajaxurl, data, function(response) {
+           output_response = JSON.parse(response);
+         });
+        });
+
+
 		}
 	}); //ajax
 }//checkwin2

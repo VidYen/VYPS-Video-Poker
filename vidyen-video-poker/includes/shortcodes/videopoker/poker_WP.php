@@ -69,7 +69,7 @@ background:url(\"" . poker_get_main_url() . "img/bg2.jpg\");
 		<td class='control' colspan='5'><input class='vp_msg' type='text' id='vp_info' readonly='readonly' name='info' value=\"" . poker_text('poker_time_to_play') . "\" size='50' /></td>
   </tr>
 </table>
-$VYPS_power_row
+<br>$VYPS_power_row
 <script>vp_trof_set_bg();WP_vp_trof_update();</script>
 <script>
 </script>

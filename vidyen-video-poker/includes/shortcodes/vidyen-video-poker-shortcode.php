@@ -59,7 +59,7 @@ function videopoker_shortcode( $atts )
   $ret .= videopoker_shortcode_localize();
   $ret .= videopoker_shortcode_top();
   $ret .= videopoker_shortcode_body();
-  $ret .= vidyen_poker_balance_func($atts);
+  vidyen_poker_balance_func($atts);
   return($ret);
 }
 

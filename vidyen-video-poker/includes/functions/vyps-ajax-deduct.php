@@ -31,7 +31,7 @@ function vyps_run_deduct_action()
         'pid' => $incoming_pointid_get,
         'firstid' => $incoming_pointid_get,
         'firstamount' => $bet_cost,
-    ), $atts, 'vyps-pe' );
+    ), $atts, 'vidyen-video-poker' );
 
   //Deduct. I figure there is a check when need to run.
   $deduct_results = vyps_deduct_func( $atts );

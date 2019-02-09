@@ -22,7 +22,21 @@ function SBFG_WP_get_poker_init()
 
 function SBFG_WP_get_poker_body()
 {
-	
+  /*** VidYen Code ***/
+  $VYPS_power_url = plugins_url( 'images/', dirname(__FILE__) ) . 'powered_by_vyps.png'; //Well it should work out.
+  $VYPS_power_row = "<div align=\"left\">Powered by <a href=\"https://wordpress.org/plugins/vidyen-point-system-vyps/\" target=\"_blank\"><img src=\"$VYPS_power_url\" alt=\"Powered by VYPS\"></a></div>";
+
+  $atts = array(
+        'pro' => '',
+    );
+
+  //Procheck here. Do not forget the ==
+  if (vyps_procheck_func($atts) == 1)
+  {
+    $VYPS_power_row = ''; //No branding if procheck is correct.
+  }
+  /*** END VidYen Code ***/
+
 	$ret = "
 <style>
 .vp_fancy_bg{
@@ -48,7 +62,7 @@ background:url(\"" . poker_get_main_url() . "img/bg2.jpg\");
 			</tr>
 		</table>
 	</td>
-  </tr>  
+  </tr>
   <tr>
 		<td class='vp_card' onclick='flipcard(0)'><img id='vp_c0' class='vp_card'  /></td>
 		<td class='vp_card' onclick='flipcard(1)'><img id='vp_c1' class='vp_card'  /></td>
@@ -63,9 +77,9 @@ background:url(\"" . poker_get_main_url() . "img/bg2.jpg\");
 		<td class='control' colspan='5'><input class='vp_msg' type='text' id='vp_info' readonly='readonly' name='info' value=\"" . poker_text('poker_time_to_play') . "\" size='50' /></td>
   </tr>
 </table>
-
+$VYPS_power_row
 <script>vp_trof_set_bg();WP_vp_trof_update();</script>
-</center></div>	
+</center></div>
 	";
  return $ret;
 }
@@ -73,9 +87,9 @@ background:url(\"" . poker_get_main_url() . "img/bg2.jpg\");
 function SBFG_WP_poker_settings_to_session()
 {
 	global $api_key;
-	global $maximum_bet; 
-	global $minimum_initial_bonus; 
-	global $maximum_initial_bonus; 
+	global $maximum_bet;
+	global $minimum_initial_bonus;
+	global $maximum_initial_bonus;
 	global $bonuses_before_deposit;
 	global $bonus_wins_before_withdraw;
 	global $maximum_deposit;
@@ -83,16 +97,16 @@ function SBFG_WP_poker_settings_to_session()
 	global $balance_page_leave_confirm;
 	global $stop_if_adblock;
 
-	$_SESSION['vp_s_api_key'] = $api_key; 
-	$_SESSION['vp_s_maximum_bet'] = $maximum_bet; 
-	$_SESSION['vp_s_minimum_initial_bonus'] = $minimum_initial_bonus; 
-	$_SESSION['vp_s_maximum_initial_bonus'] = $maximum_initial_bonus; 
+	$_SESSION['vp_s_api_key'] = $api_key;
+	$_SESSION['vp_s_maximum_bet'] = $maximum_bet;
+	$_SESSION['vp_s_minimum_initial_bonus'] = $minimum_initial_bonus;
+	$_SESSION['vp_s_maximum_initial_bonus'] = $maximum_initial_bonus;
 	$_SESSION['vp_s_bonuses_before_deposit'] = $bonuses_before_deposit;
-	$_SESSION['vp_s_wins_before_withdraw'] = $bonus_wins_before_withdraw; 
-	$_SESSION['vp_s_maximum_deposit'] = $maximum_deposit; 
-	$_SESSION['vp_s_minimum_deposit'] = $minimum_deposit; 
+	$_SESSION['vp_s_wins_before_withdraw'] = $bonus_wins_before_withdraw;
+	$_SESSION['vp_s_maximum_deposit'] = $maximum_deposit;
+	$_SESSION['vp_s_minimum_deposit'] = $minimum_deposit;
 	$_SESSION['vp_s_balance_page_leave_confirm'] = $balance_page_leave_confirm;
-	$_SESSION['vp_s_stop_if_adblock'] = $stop_if_adblock; 
+	$_SESSION['vp_s_stop_if_adblock'] = $stop_if_adblock;
 }
 
 function SBFG_WP_poker_do_withdraw($address)
@@ -114,14 +128,14 @@ function SBFG_WP_poker_do_withdraw_to_address($address)
 {
 //print_r($_SESSION);
 	$api_key = get_option('sfbg_sf_videopoker_api_key','');
-	$bonus_wins_before_withdraw = get_option('sfbg_sf_videopoker_wins_before_withdraw',3); 
+	$bonus_wins_before_withdraw = get_option('sfbg_sf_videopoker_wins_before_withdraw',3);
 
 	if(strlen($api_key) < 40)
 	{
 		die('Please provide correct cryptoo.me API Key');
 	}
-	
-	
+
+
 	$balance = intval($_SESSION["cm_balance"]);
 	if($balance <= 0)
 	{
@@ -134,8 +148,8 @@ function SBFG_WP_poker_do_withdraw_to_address($address)
 		$js = "<script>window.opener.postMessage(\"vp_withdraw\",\"*\" );</script>";
 		$msg = "When playing on the bonus you must win at least ".$bonus_wins_before_withdraw." times before withdraw.";
 		die("<br><center>$msg<br><button onclick='window.close()'>close</button></center>");
-	}	
-	
+	}
+
 
 	$fields = array(
 	'api_key'=> $api_key,
@@ -152,20 +166,20 @@ function SBFG_WP_poker_do_withdraw_to_address($address)
 	curl_setopt($curl, CURLOPT_POSTFIELDS, $fields);
 	$res = curl_exec($curl);
 //print_r($res); die(' 0');
-	if($errno = curl_errno($curl)) 
+	if($errno = curl_errno($curl))
 	{
 		$error_message = curl_strerror($errno);
 		die("cURL error ({$errno}):\n {$error_message},\nMake sure cURL is configured properly.");
 	}
 
-	curl_close($curl);	
+	curl_close($curl);
 	$out_ison = json_decode($res,true);
-*/	
+*/
 	$out = wp_remote_post( 'https://cryptoo.me/api/v1/send', array(
-		'method' => 'POST', 
+		'method' => 'POST',
 		'body' => $fields)  );
-	$out_ison = json_decode($out['body']);	
-	
+	$out_ison = json_decode($out['body']);
+
 //print_r($out_ison); die(' 1');
 	if($out_ison->status == 200)
 	{
@@ -175,25 +189,27 @@ function SBFG_WP_poker_do_withdraw_to_address($address)
 		$js .= "window.location='https://cryptoo.me/check/$address'</script>";
 		die("$js");
 	}
-//var_dump($out_ison); 
+//var_dump($out_ison);
 //var_dump($res);
 	$msg = $out_ison->message;//$out_ison->message;
 	die("<br><center>$msg<br><button onclick='window.close()'>close</button></center>");
-//if we here - no success, error!	
+//if we here - no success, error!
 }//do_withdraw
 
 function SBFG_WP_poker_do_deposit($amount)
 {
 	ob_clean();
-	
-	$api_key = get_option('sfbg_sf_videopoker_api_key','');
-	$maximum_deposit = get_option('sfbg_sf_videopoker_maximum_deposit',10000); 
-	$minimum_deposit = get_option('sfbg_sf_videopoker_minimum_deposit',5); 
-	
+
+	//$api_key = get_option('sfbg_sf_videopoker_api_key','');
+	$maximum_deposit = get_option('sfbg_sf_videopoker_maximum_deposit',10000);
+	$minimum_deposit = get_option('sfbg_sf_videopoker_minimum_deposit',5);
+
+  /*
 	if(strlen($api_key) < 40)
 	{
 		die('Please provide correct  cryptoo.me API Key');
 	}
+  */
 
 	$amount = intval($amount); //to make sure
 
@@ -218,7 +234,7 @@ function SBFG_WP_poker_do_deposit($amount)
 function SBFG_WP_poker_step_two()
 {
 	$api_key = get_option('sfbg_sf_videopoker_api_key','');
-	
+
 	if(	( intval($_SESSION["cm_deposit_amount"]) > 0) && ($_SESSION["cm_deposit_invid"]) )
 	{
 		$fields = array(
@@ -233,12 +249,12 @@ function SBFG_WP_poker_step_two()
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $fields);
 		$out = curl_exec($curl);
-		curl_close($curl);	
+		curl_close($curl);
 		$out_ison = json_decode($out);
 */
 
 		$out = wp_remote_post( 'https://cryptoo.me/api/v1/invoice/state/', array(
-			'method' => 'POST', 
+			'method' => 'POST',
 			'body' => $fields)  );
 		$out_ison = json_decode($out['body']);
 
@@ -266,7 +282,7 @@ function SBFG_WP_poker_step_two()
 			$ret = 'Transaction error. Try again';
 		}
 		unset($_SESSION["cm_deposit_amount"]);
-		unset($_SESSION["cm_deposit_invid"]);	
+		unset($_SESSION["cm_deposit_invid"]);
 	}
 	else //session check
 	{
@@ -279,7 +295,7 @@ function SBFG_WP_poker_step_two()
 function  SBFG_WP_poker_step_one($amount)
 {
 	$api_key = get_option('sfbg_sf_videopoker_api_key','');
-	
+
 	if(!function_exists('curl_version'))
 	{
 		die('cURL is not enabled on this hosting');
@@ -292,18 +308,18 @@ function  SBFG_WP_poker_step_one($amount)
 		(! empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443') ) {
 		$server_request_scheme = 'https';
 	}
-	
+
 	$self_url = $server_request_scheme . '://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 
 /*
-	if ($pos_get = strpos($self_url, '?')) 
+	if ($pos_get = strpos($self_url, '?'))
 	{
 		$self_url = substr($self_url, 0, $pos_get);
 	}
 */
 	$callback_url = $self_url . '';
 
-	
+
 	$fields = array(
 		'key'=>$api_key,
 		'amount'=>$amount,
@@ -319,23 +335,22 @@ function  SBFG_WP_poker_step_one($amount)
 	curl_setopt($curl, CURLOPT_POST, true);
 	curl_setopt($curl, CURLOPT_POSTFIELDS, $fields);
 	$out = curl_exec($curl);
-	if($errno = curl_errno($curl)) 
+	if($errno = curl_errno($curl))
 	{
 		$error_message = curl_strerror($errno);
 		die("cURL error ({$errno}):\n {$error_message},\nMake sure cURL is configured properly.");
-	}	
+	}
 	curl_close($curl);
 	$out_ison = json_decode($out);
 */
 
 	$out = wp_remote_post( 'https://cryptoo.me/api/v1/invoice/create/', array(
-		'method' => 'POST', 
+		'method' => 'POST',
 		'body' => $fields)  );
-	$out_ison = json_decode($out['body']);	
+	$out_ison = json_decode($out['body']);
 //print_r($out_ison); die();
 	$_SESSION["cm_deposit_amount"] = $amount;
 	$_SESSION["cm_deposit_invid"] = $out_ison->invid;
- 
+
 	header('Location: https://cryptoo.me/api/v1/invoice/open/'.$out_ison->invid);
 }//step_one
-

@@ -49,14 +49,6 @@ background:url(\"" . poker_get_main_url() . "img/bg2.jpg\");
 	<td colspan='5'>
 		<table class='titletable' border=0 style='width:100%;'>
 			<tr>
-				<td colspan='2' width='50%'>
-					<input id='cm_deposit'  onclick='vp_trof_deposit()' type='button' value='" . poker_text('poker_deposit')."' style='width:100%' />
-				</td>
-				<td colspan='2'>
-					<input id='cm_withdraw' onclick='vp_trof_withdraw()' type='button' value='" . poker_text('poker_withdraw') . "' style='width:100%' />
-				</td>
-			</tr>
-			<tr>
 				<td colspan='2'><label >" . poker_text('poker_bet') . ":</label> <input type='text' name='bet' id='vp_bet'  value='5' size='5' /></td>
 				<td colspan='2'><label >" . poker_text('poker_balance') . ":</label> <input type='text' id='vp_balance' readonly='readonly' name='money'  value='0' size='5' /></td>
 			</tr>

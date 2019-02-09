@@ -4,7 +4,7 @@
  * Plugin URI: http://vidyen.com
  * Description: A video poker game for the VidYen Point System.
  * Author: VidYen, LLC
- * Version: 0.0.3
+ * Version: 0.0.11
  * Author URI: http://VidYen.com
  * Text Domain: vidyen-video-poker
  * License: GPLv2
@@ -12,7 +12,8 @@
 */
 
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/videopoker/poker_WP.php'); //SBFG_WP_get_poker_init
-include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vidyen-video-poker.php'); //Shortcode Init
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vidyen-video-poker-shortcode.php'); //Shortcode Init
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-poker-balance-func.php'); //Shortcode Init
 
 function register_all_setings()
 {

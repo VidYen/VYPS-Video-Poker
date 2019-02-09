@@ -6,6 +6,7 @@ called via ajax
 ?action=update
 
 */
+
 if( !session_id() )
 {
     session_start();
@@ -29,7 +30,7 @@ $action = $_GET['action'];
 
 if($action == 'deal')
 {
-//$_SESSION["cm_balance"] = 100;
+//$_SESSION["cm_balance"] = 100; //THis line was to give his balance
 //print_r($_SESSION); //die;
 	$pat = '11111'; //change all, 0 - leave as is
 	if(isset($_GET['pat']))
@@ -72,21 +73,6 @@ if($action == 'update')
 
   $balance = intval($_SESSION["cm_balance"]); //NOTE: I'm going to guess it is fucking here where the balance goes. -Felty. So angry.
   //It is possible that this needs to run.
-
-  /*** VIDYEN ***/
-
-	$atts = array(
-				'pid' => 3,
-				'uid' => 1,
-				'raw' => TRUE,
-				'decimal' => 0,
-		    );
-  //echo 'array test' . $atts;
-
-  $balance = vyps_balance_func($atts);
-  //echo 'vyps blance test' . $balance;
-
-  /*** END VIDYEN ***/
 
 	if(!isset($_SESSION["cm_bonuses_diven"]))
 	{
@@ -265,7 +251,7 @@ function checkwin()
 
 	$win_after_bonus = intval($_SESSION["cm_wins_after_bonus"]);
 	$balance = intval($_SESSION["cm_balance"]);
-	if($won > 0)
+  if($won > 0)
 	{
 		$win_after_bonus++;
 		$_SESSION["cm_wins_after_bonus"] = $win_after_bonus;
@@ -273,6 +259,10 @@ function checkwin()
 		$_SESSION["cm_balance"] = $balance;
 		$msg .= ' ' . str_replace('%n', $won, poker_text('you_won')) . ' !';
 	}
+  else
+  {
+    $_SESSION["cm_balance"] = $balance; //I suspect we have to do this if nothing is done
+  }
 
 	//drop cardvals
 	$_SESSION["cm_cardvals"] = '';

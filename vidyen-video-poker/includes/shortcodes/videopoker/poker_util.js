@@ -195,7 +195,7 @@ window.onbeforeunload = function(){
 	if( ( (typeof balance_page_leave_confirm !== 'undefined') && (winnings >= balance_page_leave_confirm)) 
 	     && (we_are_ok) && (typeof no_exit_popup !== 'undefined') )
 	{
-		var s = poker_text_you_still_have  + ' '+winnings+' '+ poker_text_satoshi + '.<br>'; 
+		var s = poker_text_you_still_have  + ' '+winnings+' '+ poker_text_points + '.<br>'; 
 	    jQuery.MessageBox(s);
 		return s;
 	}

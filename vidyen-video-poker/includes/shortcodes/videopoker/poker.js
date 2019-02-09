@@ -246,7 +246,7 @@ console.info(data);
 
 		if ( !winnings ) {
 			newdeal = 2;
-			jQuery.MessageBox(poker_text_no_satoshi_reset
+			jQuery.MessageBox(poker_text_no_points_reset
 			).done(function(data){
 				window.location.reload();
 				return;

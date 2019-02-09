@@ -133,7 +133,7 @@ function SBFG_WP_poker_do_withdraw_to_address($address)
 	$balance = intval($_SESSION["cm_balance"]);
 	if($balance <= 0)
 	{
-		$msg = "Your balance is $balance satoshi. Nothing to withdraw yet!";
+		$msg = "Your balance is $balance points. Nothing to withdraw yet!";
 		die("<br><center>$msg<br><button onclick='window.close()'>close</button></center>");
 	}
 
@@ -260,7 +260,7 @@ function SBFG_WP_poker_step_two()
 				$balace += intval($out_ison->invoice->amount);
 				$_SESSION["cm_balance"] = $balace;
 				$_SESSION["cm_bonuses_diven"] = 0;
-				$ret = 'Balance: ' . $balace . ' satoshi';
+				$ret = 'Balance: ' . $balace . ' points';
 				$deposits = intval($_SESSION["cm_deposits"]);
 				$deposits++;
 				$_SESSION["cm_deposits"] = $deposits;

@@ -9,6 +9,8 @@ Requires [VYPS](https://github.com/VidYen/VYPS-Plugin) and at least one poitn ty
 
 Would suggest using it to make money with the miner though unless you like using admin panel to give away points.
 
+![](https://media.discordapp.net/attachments/342003896367054858/544001914082164766/unknown.png)
+
 # Dev Monero (XMR) Donation Wallet
 
 8BpC2QJfjvoiXd8RZv3DhRWetG7ybGwD8eqG9MZoZyv7aHRhPzvrRF43UY1JbPdZHnEckPyR4dAoSSZazf5AY5SS9jrFAdb

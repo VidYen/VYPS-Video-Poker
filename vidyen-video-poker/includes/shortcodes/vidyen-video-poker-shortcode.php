@@ -55,6 +55,12 @@ function videopoker_shortcode_localize()
 
 function videopoker_shortcode( $atts )
 {
+  //Login check.
+  if ( ! is_user_logged_in() )
+  {
+      return 'Please log in to play VidYen Video Poker!';
+  }
+
   $ret = '';
   $ret .= videopoker_shortcode_localize();
   $ret .= videopoker_shortcode_top();

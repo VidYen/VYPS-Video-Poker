@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: []VidYen Video Poker
+ * Plugin Name: VidYen Video Poker
  * Plugin URI: http://vidyen.com
  * Description: A video poker game for the VidYen Point System.
  * Author: VidYen, LLC
@@ -166,5 +166,6 @@ function vidyen_video_poker_menu_page()
 	<h2>Shortcode</h2>
 	<p>Simply put the shortcode <b>[vidyen-video-poker]</b> on a page and let it run with the point id from the VidYen point system.</p>
 	<p>Requires the VidYen point system for any points.</p>
+	<p>Max bet does not work currently. Hard coded to 10000</p>
 	';
 }

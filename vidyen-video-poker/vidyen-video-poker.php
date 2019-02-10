@@ -16,6 +16,7 @@ include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vi
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-poker-balance-func.php'); //Shortcode Init
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-ajax-deduct.php'); //Add ajax
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-ajax-add.php'); //deduct ajax
+
 function register_all_setings()
 {
 	global $VidYen_Video_Poker_Options_str;
@@ -34,4 +35,29 @@ function register_all_setings()
   //Video Poker Options	END
 }//register_all_setings()
 
-//$GLOBALS['VidYen_Video_Poker_Plugin'] = new VidYen_Video_Poker_Plugin;
+register_activation_hook(__FILE__, 'videyen_video_poker_sql_install');
+
+//Install the SQL tables for VYPS.
+function videyen_video_poker_sql_install() {
+
+    global $wpdb;
+
+		//I have no clue why this is needed. I should learn, but I wasn't the original author. -Felty
+		$charset_collate = $wpdb->get_charset_collate();
+
+		//NOTE: I have the mind to make mediumint to int, but I wonder if you get 8 million log transactios that you should consider another solution than VYPS.
+
+		//videyen_video_poker table creation
+    $table_name_points = $wpdb->prefix . 'videyen_video_poker';
+
+    $sql = "CREATE TABLE {$table_name_points} (
+		id mediumint(9) NOT NULL AUTO_INCREMENT,
+		point_id mediumint(9) NOT NULL,
+		maximum_bet mediumint(9) NOT NULL,
+		PRIMARY KEY  (id)
+        ) {$charset_collate};";
+
+    require_once (ABSPATH . 'wp-admin/includes/upgrade.php'); //I never did investigate why the original outsource dev used this.
+
+    dbDelta($sql);
+}

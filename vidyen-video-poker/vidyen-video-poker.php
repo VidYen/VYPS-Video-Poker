@@ -4,7 +4,7 @@
  * Plugin URI: http://vidyen.com
  * Description: A video poker game for the VidYen Point System.
  * Author: VidYen, LLC
- * Version: 0.0.26
+ * Version: 0.0.28
  * Author URI: http://VidYen.com
  * Text Domain: vidyen-video-poker
  * License: GPLv2
@@ -16,6 +16,8 @@ include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vi
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-poker-balance-func.php'); //Shortcode Init
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-ajax-deduct.php'); //Add ajax
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-ajax-add.php'); //deduct ajax
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-poker-pid-pull.php'); //PID vyps_poker_pid_pull
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-poker-max-bet-pull.php'); //Not actually used yet.
 
 function register_all_setings()
 {

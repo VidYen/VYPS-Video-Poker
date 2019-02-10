@@ -14,7 +14,7 @@ function vyps_run_add_action()
 
   $win_amount = intval( $_POST['win_amount'] );
 
-  $outgoing_pointid_get = 3; //Hard coded for now
+  $outgoing_pointid_get = vyps_poker_pid_pull(); //Now with no hardcoding
 
   // Shortcode additions.
   $atts = shortcode_atts(

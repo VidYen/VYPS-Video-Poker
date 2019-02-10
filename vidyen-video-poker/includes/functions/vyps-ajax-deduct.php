@@ -14,7 +14,7 @@ function vyps_run_deduct_action()
 
   $bet_cost = intval( $_POST['bet_amount'] );
 
-  $incoming_pointid_get = 3; //Hard coded for now
+  $incoming_pointid_get = vyps_poker_pid_pull(); //Now with not hardcoding
 
   // Shortcode additions.
   $atts = shortcode_atts(

@@ -28,7 +28,9 @@ function vidyen_poker_balance_func($atts)
 				'decimal' => 0,
 		), $atts, 'vyps-balance' );
 
-	$pointID = $atts['pid'];
+	//$pointID = $atts['pid'];
+	$pointID = vyps_poker_pid_pull(); //This is my $wpdb function to the pid
+	$maximum_bet = vyps_poker_max_bet_pull(); //This is the $wpdb call to the max bet WCCW
 	$userID = $atts['uid'];
 	//$isRaw = $atts['raw'];
 	$decimal_format_modifier = intval($atts['decimal']); //This has to be a int or will throw the number format
@@ -47,7 +49,7 @@ function vidyen_poker_balance_func($atts)
 	{
 		return 0;
 	}
-	
+
 	//Now for the balances.
 	$table_name_log = $wpdb->prefix . 'vyps_points_log';
 	$table_name_points = $wpdb->prefix . 'vyps_points';
@@ -82,11 +84,11 @@ function vidyen_poker_balance_func($atts)
 
 	$balance_output = intval($balance_points); //Just the raw data please. No formatting. NOTE: Youy will have to call for it if you use this function. Hrm... Maybe that should be at top.
 
-	$_SESSION["cm_balance"] = $balance_output;
+	$_SESSION['vp_s_maximum_bet'] = $maximum_bet; //This is the max bet to session
+	$_SESSION["cm_balance"] = $balance_output; //This is balance
 
 	//Out it goes!
 	return $balance_output;
-
 }
 
 add_shortcode('vidyen-video-poker-balance', 'vidyen_poker_balance_func');

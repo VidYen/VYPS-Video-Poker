@@ -163,5 +163,8 @@ function vidyen_video_poker_menu_page()
 			</tr>
 		</form>
 	</table>
+	<h2>Shortcode</h2>
+	<p>Simply put the shortcode <b>[vidyen-video-poker]</b> on a page and let it run with the point id from the VidYen point system.</p>
+	<p>Requires the VidYen point system for any points.</p>
 	';
 }

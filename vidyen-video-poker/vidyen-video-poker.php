@@ -1,10 +1,10 @@
 <?php
 /*
- * Plugin Name: VidYen Video Poker
+ * Plugin Name: []VidYen Video Poker
  * Plugin URI: http://vidyen.com
  * Description: A video poker game for the VidYen Point System.
  * Author: VidYen, LLC
- * Version: 0.0.28
+ * Version: 0.0.30
  * Author URI: http://VidYen.com
  * Text Domain: vidyen-video-poker
  * License: GPLv2
@@ -158,7 +158,7 @@ function vidyen_video_poker_menu_page()
 			</tr>
 			<tr>
 				<td><input type="number" name="point_id" type="number" id="point_id" min="1" step="1" value="' . $point_id .  '" required="true"></td>
-				<td><input type="number" name="max_bet" type="number" id="max_bet" min="1" max="1000000" step="1" value="' . $max_bet . '" required="true"></td>
+				<td><input type="number" name="max_bet" type="number" id="max_bet" min="1" max="1000000" step="1" value="' . $max_bet . '" required="true" disabled></td>
 				<td><input type="submit" value="Submit"></td>
 			</tr>
 		</form>

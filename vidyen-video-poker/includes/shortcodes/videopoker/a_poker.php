@@ -258,10 +258,13 @@ function checkwin()
 		$balance += $won;
 		$_SESSION["cm_balance"] = $balance;
 		$msg .= ' ' . str_replace('%n', $won, poker_text('you_won')) . ' !';
+
+    $_SESSION["vidyen_add_win"] = $won; //Obvious this is vidyen Code for the session.
 	}
   else
   {
     $_SESSION["cm_balance"] = $balance; //I suspect we have to do this if nothing is done
+    $_SESSION["vidyen_add_win"] = 0; //This may not be needed but I realize if they didn't win, they shouldn't be able to ajax the old win.
   }
 
 	//drop cardvals

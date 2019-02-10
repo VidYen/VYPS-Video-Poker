@@ -12,7 +12,9 @@ function vyps_run_deduct_action()
 {
   global $wpdb; // this is how you get access to the database
 
-  $bet_cost = intval( $_POST['bet_amount'] );
+  //$bet_cost = intval( $_POST['bet_amount'] ); //Avoding the ajax other than letting know php should run
+
+  $bet_cost = intval($_SESSION["cm_bet"]); //Didn't realize sessions were server side until recently
 
   $incoming_pointid_get = vyps_poker_pid_pull(); //Now with not hardcoding
 

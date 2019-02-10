@@ -1,18 +1,18 @@
-=== Simple Bitcoin (Altcoin) Faucets, Visitor Rewarder, Satoshi Games, Referral Program ===
-Contributors: trof
+=== VidYen Video Poker ===
+Contributors: VidYen, Felty, trof
 Tags: bitcoin,faucet,satoshi,games,poker,visitor rewarder, referrals, tetris, blockrain,2048,lines,minesweeper, video poker, bubble shooter, videopoker,satoshi bonds, shortcode,rain captcha,surfer rewarder,cryptocurrency,crypto-currency,crypto currency,satoshi,BTC,Dogecoin,DOGE,Litecoin,LTC,Ethereum,ETH,Primecoin,XPM,DASH,Peercoin,PPC
 Requires at least: 2.0
 Tested up to: 5.0.3
 Stable tag: 1.1.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html 
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
+== THIS NEEDS TO BE REWRITTEN ==
 
 == Description ==
 = Simple Bitcoin Faucet for WordPress  =
-Bitcoin Faucet in-general is a software, rewarding visitors with fractures of Bitcoin (or other crypto-currency, "Altcoin Faucet"). 
-So, basically Bitcoin Faucet owner exchanging traffic to small rewards, re-capitalizing on the banner impressions. 
+Bitcoin Faucet in-general is a software, rewarding visitors with fractures of Bitcoin (or other crypto-currency, "Altcoin Faucet").
+So, basically Bitcoin Faucet owner exchanging traffic to small rewards, re-capitalizing on the banner impressions.
 Faucet can be used as a reward for visiting several pages (this plugin provides this functionality as "Rewarder", see examples), or as prize for games (several games were added, more coming soon)
 This plugin using <a href=https://wmexp.com/remotely-hosted-bitcoin-faucet-examples-list/example-creating-remote-faucet/>Remotely Hosted Faucets</a>, so you can have as many Faucets / Games on your site as you want.
 See how it looks at the Demos:
@@ -44,7 +44,7 @@ See how it looks at the Demos:
 
 
 == Installation ==
-1. The easiest way is to login to you WordPress dashboard, go to Plugins >> Add New, search for Bitcoin Faucet, and click to install. 
+1. The easiest way is to login to you WordPress dashboard, go to Plugins >> Add New, search for Bitcoin Faucet, and click to install.
 You can also download the zip file from this page and upload it from the Plugins >> Add New > Upload page.
 1. Activate the plugin through the WordPress 'Plugins' menu
 1. Configure the <a href="http://wmexp.com/my-faucets" target="_blank">Remote Faucet</a> (or several of them), insert Faucet IDs.
@@ -72,31 +72,31 @@ By continuing to use this plugin, you agree that you have read and understood th
 = What is Bitcoin ? =
 
 Well, it's money. Bitcoin is a cryptocurrency and a payment system.
-Read more on the Wikipedia: <a href="https://en.wikipedia.org/wiki/Bitcoin">https://en.wikipedia.org/wiki/Bitcoin</a> 
+Read more on the Wikipedia: <a href="https://en.wikipedia.org/wiki/Bitcoin">https://en.wikipedia.org/wiki/Bitcoin</a>
 
 = What the Bitcoin Faucet is for ? =
 
-Bitcoin Faucet owner exchanges traffic for small fracture of bitcoin or other cryptocurrency. 
+Bitcoin Faucet owner exchanges traffic for small fracture of bitcoin or other cryptocurrency.
 Visitor navigates to your faucet page, sees the banners (maybe eventually clicks), and gets rewarded for it.
 Crypto-currencies allow you to use really tiny units like <a href="https://en.bitcoin.it/wiki/Satoshi_(unit)" target="_blank">Satoshi</a>, so for both visitor and faucet owner it's win-win situation.
 <a href="https://en.wikipedia.org/wiki/Bitcoin_faucet">Bitcoin Faucet on Wikipedia</a>
 
 = Is Bitcoin Faucet profitable ? =
 
-We guess it is, otherwise thousands of people wouldn't run Bitcoin Faucets, right? ;) 
-Try to google "bitcoin faucet" and see for yourself. Now you can operate Bitcoin Faucet on WordPress too. 
-Considering you will find plenty of "Bitcoin Faucet" websites, gotta warn you: Don't worry about the competition - it actually forms the market, and so far the demand grows faster than supply. 
+We guess it is, otherwise thousands of people wouldn't run Bitcoin Faucets, right? ;)
+Try to google "bitcoin faucet" and see for yourself. Now you can operate Bitcoin Faucet on WordPress too.
+Considering you will find plenty of "Bitcoin Faucet" websites, gotta warn you: Don't worry about the competition - it actually forms the market, and so far the demand grows faster than supply.
 
 = So, I just install this Plugin, and money magically falling into my wallet? =
 
-In ideal world - absolutely. In the real world... Dude, we are talking money here. Your money. Do some research, will you? ;) At least finish this FAQ. And still do the research after =) 
+In ideal world - absolutely. In the real world... Dude, we are talking money here. Your money. Do some research, will you? ;) At least finish this FAQ. And still do the research after =)
 
 
 = What do I need to run Bitcoin Faucets ? =
-* You will need get an account with a micro-payment system (we support all major, <a href=https://cryptoo.me>cryptoo.me</a> is recommended). 
+* You will need get an account with a micro-payment system (we support all major, <a href=https://cryptoo.me>cryptoo.me</a> is recommended).
 It is free, if you are not sure what "MicroPayment System" is, keep reading.
 * For most of the games you also need an account with Remotely Hosted Faucets operator <a href=https://wmexp.com>wmexp.com</a>.
-* To monetize you probably will need an account with ad network(s). 
+* To monetize you probably will need an account with ad network(s).
 We recommend <a href='http://a-ads.com?partner=303644'>Anonymous Ads</a>, because it pays for impressions, and does in it Bitcoins, but you can use any suitable (<a href='https://coinmedia.co?ref=6942'>Coin Madia</a> is also good. You may consider <a href='https://popunder.net?r=425612'>PopUnder</a> income as well). These not only free, but paying you, right? ;)
 
 = What is Bitcoin Wallet ? =
@@ -106,7 +106,7 @@ It is a stand-alone software or web service, allowing you to handle cryprocurren
 = What is MicroPayment Systems ? =
 
 MicroPayment Systems is a middle-tear between Bitcoin Faucet (or any other micro-payment thingie) and Bitcoin Wallet. Here is an example: <a href="https://cryptoo.me">cryptoo.me</a>.
-Usually reward in not big (well, 1 Satoshi is 0.00000001 of a Bitcoin), so if you pay the reward to the visitor directly, the commission will eat-up the reward. 
+Usually reward in not big (well, 1 Satoshi is 0.00000001 of a Bitcoin), so if you pay the reward to the visitor directly, the commission will eat-up the reward.
 Instead, you pay to the MicroPayment Systems once (usually minimal payment is in the range of 50 cents or so ) , and the MicroPayment Systems keeps track of the Bitcoin Faucet user activity, and pays user automatically when the accumulated rewards amount is big enough to transfer.
 
 = How do I fund my Faucet ? (tough one! :) ) =
@@ -115,10 +115,10 @@ Unpleasant part, huh? Yes, in order to dispurse rewards (and re-capitalize on th
 So, you have several options.
 * If you have crypto-currency, just send it to your micropayment deposit address.
 * If you have fiat money (and you probably do =) ), look for online exchange service.
-* If you using Cryptoo.me you may collect form <a href="https://cryptoo.me/rotator/">applications</a> using your <a href="https://cryptoo.me/deposits/">deposit address</a>. 
+* If you using Cryptoo.me you may collect form <a href="https://cryptoo.me/rotator/">applications</a> using your <a href="https://cryptoo.me/deposits/">deposit address</a>.
 You can also participate in referral programs at  <a href="https://wmexp.com/referral-program/">wmexp.com</a> and <a href="https://cryptoo.me/referral-program/">cryptoo.me</a>.
-It will give you enough satoshi to start your own faucet. 
-You also may send your visitors to 
+It will give you enough satoshi to start your own faucet.
+You also may send your visitors to
 https://wmexp.com/?wmexp_r=YOUR_DEPOSIT_BITCOIN_ADDRESS (<a href="https://wmexp.com/?wmexp_r=1GHrzqB6Ngab1gvZDd2tyTXxigziy26L6s">example</a>), so they are going to collect satoshi for you.
 
 
@@ -129,18 +129,18 @@ Well, the traffic - it's what Bitcoin Faucet is for. So:
 * Rewarded visitors may bookmark your Bitcoin Faucet and return later.
 * Your Bitcoin Faucet comes with referral system to encourage people to share links to you.  
 * MicroPayment Systems  have so called "Rotators" (like <a href="https://cryptoo.me/rotator/">this one</a>) - look it up in the MicroPayment Systems configuration.
-* There are hundreds (actually, more like thousands) websites listing Bitcoin Faucets (living on the referral commission too), even if you don't contact the owners - most likely your Bitcoin Faucet will be listed eventually. 
+* There are hundreds (actually, more like thousands) websites listing Bitcoin Faucets (living on the referral commission too), even if you don't contact the owners - most likely your Bitcoin Faucet will be listed eventually.
 * Plenty of people do search for Bitcoin Faucets to get rewards.
 
 = Is Bitcoin Faucet absolutely secure ? =
 
-Right, we are talking the money here. Well, nothing is "absolutely" secure, but to our best knowledge the Bitcoin Faucet for WordPress is as secure as it gets, no less secure than other Bitcoin Faucet software. We've jumped through a lot of hoops to increase security, so just use your common sense and you will be fine. 
+Right, we are talking the money here. Well, nothing is "absolutely" secure, but to our best knowledge the Bitcoin Faucet for WordPress is as secure as it gets, no less secure than other Bitcoin Faucet software. We've jumped through a lot of hoops to increase security, so just use your common sense and you will be fine.
 BTW: MicroPayment  systems provide extra level of security, so don't be lazy and configure them too. It's easy, if you are able to run WordPress website, you surely can figure it out. =)
 
 
 = Does the Bitcoin Faucet run on free hosting? =
 
-Oh yeah. 
+Oh yeah.
 
 
 
@@ -235,7 +235,3 @@ Initial public release<br>
 
 == Upgrade notice ==
 Compatible with previous versions, no actions required.<br>
-
-
-
-

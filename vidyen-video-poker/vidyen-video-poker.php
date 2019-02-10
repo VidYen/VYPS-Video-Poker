@@ -4,7 +4,7 @@
  * Plugin URI: http://vidyen.com
  * Description: A video poker game for the VidYen Point System.
  * Author: VidYen, LLC
- * Version: 0.0.33
+ * Version: 0.0.34
  * Author URI: http://VidYen.com
  * Text Domain: vidyen-video-poker
  * License: GPLv2
@@ -95,6 +95,16 @@ function vidyen_video_poker_menu_page()
 
 	if (isset($_POST['point_id']))
 	{
+		//As the post is the only thing that edits data, I suppose this is the best place to the noce
+		$vyps_nonce_check = $_POST['vypsnoncepost'];
+		if ( ! wp_verify_nonce( $vyps_nonce_check, 'vyps-nonce' ) ) {
+				// This nonce is not valid.
+				die( 'Security check' );
+		} else {
+				// The nonce was valid.
+				// Do stuff here.
+		}
+
 		//ID Text value
 		$point_id = abs(intval($_POST['point_id'])); //Even though I am in the believe if an admin sql injects himself, we got bigger issues, but this has been sanitized.
 
@@ -160,12 +170,16 @@ function vidyen_video_poker_menu_page()
 
 	//It's possible we don't use the VYPS logo since no points.
   $vyps_logo_url = plugins_url( 'includes/images/logo.png', __FILE__ );
-	//Logo from base. If a plugin is installed not on the menu they can't see it not showing.
-	echo '';
+	$vidyen_video_poker_logo_url = plugins_url( 'includes/images/vyvp-logo.png', __FILE__ );
+
+	//Adding a nonce to the post
+	$vyps_nonce_check = wp_create_nonce( 'vyps-nonce' );
+
 
 	//Static text for the base plugin
 	echo
-	'<h1>VidYen Video Poker Sub-Plugin</h1>
+	'<br><br><img src="' . $vidyen_video_poker_logo_url . '">
+	<h1>VidYen Video Poker Sub-Plugin</h1>
 	<p>The Video poker!</p>
 	<table>
 		<form method="post">
@@ -176,7 +190,8 @@ function vidyen_video_poker_menu_page()
 				<th>Submit</th>
 			</tr>
 			<tr>
-				<td><input type="number" name="point_id" type="number" id="point_id" min="1" step="1" value="' . $point_id .  '" required="true"></td>
+				<td><input type="number" name="point_id" type="number" id="point_id" min="1" step="1" value="' . $point_id .  '" required="true">
+				<input type="hidden" name="vypsnoncepost" id="vypsnoncepost" value="'. $vyps_nonce_check . '"/></td>
 				<td><input type="number" name="max_bet" type="number" id="max_bet" min="1" max="1000000" step="1" value="' . $max_bet . '" required="true"></td>
 				<td><input type="number" name="win_multi" type="number" id="win_multi" min="0.01" max="10" step=".01" value="' . $win_multi . '" required="true"></td>
 				<td><input type="submit" value="Submit"></td>
@@ -184,6 +199,7 @@ function vidyen_video_poker_menu_page()
 		</form>
 	</table>
 	<h2>Shortcode</h2>
+	<p><b>[vidyen-video-poker]</b></p>
 	<p>Simply put the shortcode <b>[vidyen-video-poker]</b> on a page and let it run with the point id from the VidYen point system.</p>
 	<p>Point ID is the point ID from the VidYen System. Found in Manage Points section of VYPS</p>
 	<p>Max bet is how much you want to let them bet in a single hand. Requires session refresh.</p>

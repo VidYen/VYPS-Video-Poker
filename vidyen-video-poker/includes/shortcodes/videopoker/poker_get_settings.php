@@ -13,8 +13,10 @@ global $maximum_deposit;
 global $minimum_deposit;
 global $balance_page_leave_confirm;
 global $stop_if_adblock;
+
+$vidyen_max_bet = intval($_SESSION['vidyen_max_bet']);
 $api_key = get_option('sfbg_sf_videopoker_api_key','');
-$maximum_bet = get_option('sfbg_sf_videopoker_maximum_bet',1000); 
+$maximum_bet = get_option('sfbg_sf_videopoker_maximum_bet', $vidyen_max_bet);
 $minimum_initial_bonus = get_option('sfbg_sf_videopoker_minimum_initial_bonus',3);
 $maximum_initial_bonus = get_option('sfbg_sf_videopoker_maximum_initial_bonus',11);
 $bonuses_before_deposit = get_option('sfbg_sf_videopoker_bonuses_before_deposit',3);

@@ -31,6 +31,7 @@ function vidyen_poker_balance_func($atts)
 	//$pointID = $atts['pid'];
 	$pointID = vyps_poker_pid_pull(); //This is my $wpdb function to the pid
 	$maximum_bet = vyps_poker_max_bet_pull(); //This is the $wpdb call to the max bet WCCW
+	$win_multi = vyps_poker_multi_pull(); //Win multi for adjust winnings
 	$userID = $atts['uid'];
 	//$isRaw = $atts['raw'];
 	$decimal_format_modifier = intval($atts['decimal']); //This has to be a int or will throw the number format
@@ -76,16 +77,17 @@ function vidyen_poker_balance_func($atts)
 
 	if ($balance_points == '')
 	{
-
 		//Just a quick check to see if there were not points that it at least shows zero.
 		$balance_points = 0;
-
 	}
 
 	$balance_output = intval($balance_points); //Just the raw data please. No formatting. NOTE: Youy will have to call for it if you use this function. Hrm... Maybe that should be at top.
 
-	$_SESSION['vp_s_maximum_bet'] = $maximum_bet; //This is the max bet to session
+	$_SESSION['vidyen_max_bet'] = $maximum_bet; //This is the max bet to session
 	$_SESSION["cm_balance"] = $balance_output; //This is balance
+
+	//I feel this is good as any to call this function
+	$_SESSION['vidyen_win_multi'] = $win_multi;
 
 	//Out it goes!
 	return $balance_output;

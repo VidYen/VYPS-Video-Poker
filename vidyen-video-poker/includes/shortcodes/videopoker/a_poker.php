@@ -249,6 +249,10 @@ function checkwin()
     }
   }
 
+  $win_multi = floatval($_SESSION["vidyen_win_multi"]);
+
+  $won = intval($won * $win_multi);
+
 	$win_after_bonus = intval($_SESSION["cm_wins_after_bonus"]);
 	$balance = intval($_SESSION["cm_balance"]);
   if($won > 0)

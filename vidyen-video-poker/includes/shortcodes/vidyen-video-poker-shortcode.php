@@ -60,12 +60,12 @@ function videopoker_shortcode( $atts )
   {
       return 'Please log in to play VidYen Video Poker!';
   }
-
+  vidyen_poker_balance_func(); //First load to create variables
   $ret = '';
   $ret .= videopoker_shortcode_localize();
   $ret .= videopoker_shortcode_top();
   $ret .= videopoker_shortcode_body();
-  vidyen_poker_balance_func();
+  vidyen_poker_balance_func(); //Second load to overwrite variables
   return($ret);
 }
 

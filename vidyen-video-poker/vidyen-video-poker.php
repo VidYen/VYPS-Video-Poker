@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: []VidYen Video Poker
+ * Plugin Name: VidYen Video Poker
  * Plugin URI: http://vidyen.com
  * Description: A video poker game for the VidYen Point System.
  * Author: VidYen, LLC

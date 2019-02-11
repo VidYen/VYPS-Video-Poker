@@ -20,36 +20,12 @@ function vidyen_poker_balance_func($atts)
 		return 0;
 	}
 
-	$atts = shortcode_atts(
-		array(
-				'pid' => '0',
-				'uid' => '0',
-				'raw' => TRUE,
-				'decimal' => 0,
-		), $atts, 'vyps-balance' );
-
 	//$pointID = $atts['pid'];
 	$pointID = vyps_poker_pid_pull(); //This is my $wpdb function to the pid
 	$maximum_bet = vyps_poker_max_bet_pull(); //This is the $wpdb call to the max bet WCCW
 	$win_multi = vyps_poker_multi_pull(); //Win multi for adjust winnings
-	$userID = $atts['uid'];
-	//$isRaw = $atts['raw'];
-	$decimal_format_modifier = intval($atts['decimal']); //This has to be a int or will throw the number format
-
-	//Ok if admin set an UID, they can override current user to see anyone
-	//I realize in theory you could do this with WW as well.
-	//Raw is for if you want just the number. Otherwise it comes with the icon and commas. Perhaps I should break this off into a 3rd way.
-	//But its possible for admin to set to no if they want
-
-	if ( $userID == 0 )
-	{
-		$userID = get_current_user_id();
-	}
-
-	if ( $pointID == 0 )
-	{
-		return 0;
-	}
+	$userID = get_current_user_id();
+	$decimal_format_modifier = 0; //This has to be a int or will throw the number format
 
 	//Now for the balances.
 	$table_name_log = $wpdb->prefix . 'vyps_points_log';

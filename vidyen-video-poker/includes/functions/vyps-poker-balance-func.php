@@ -9,7 +9,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-function vidyen_poker_balance_func($atts)
+function vidyen_poker_balance_func()
 {
 	global $wpdb; //Seeing if this needs to be moved up
 

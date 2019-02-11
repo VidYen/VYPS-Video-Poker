@@ -92,7 +92,7 @@ function SBFG_WP_poker_settings_to_session()
 	global $stop_if_adblock;
 
   //error on frist try
-  if (isset($_SESSION['vidyen_max_bet'])
+  if (isset($_SESSION['vidyen_max_bet']))
   {
     $vidyen_maximum_bet = $_SESSION['vidyen_max_bet']; //I belew this should work to put our own settings in. Or not. -Felty
   }

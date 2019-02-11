@@ -91,7 +91,16 @@ function SBFG_WP_poker_settings_to_session()
 	global $balance_page_leave_confirm;
 	global $stop_if_adblock;
 
-  $vidyen_maximum_bet = $_SESSION['vidyen_max_bet']; //I belew this should work to put our own settings in. Or not. -Felty
+  //error on frist try
+  if (isset($_SESSION['vidyen_max_bet'])
+  {
+    $vidyen_maximum_bet = $_SESSION['vidyen_max_bet']; //I belew this should work to put our own settings in. Or not. -Felty
+  }
+  else
+  {
+    $maximum_bet = 100;
+  }
+
   $maximum_bet = $vidyen_maximum_bet; //Prolly not needed.
 
 	$_SESSION['vp_s_api_key'] = $api_key;
@@ -103,7 +112,7 @@ function SBFG_WP_poker_settings_to_session()
 	$_SESSION['vp_s_maximum_deposit'] = $maximum_deposit;
 	$_SESSION['vp_s_minimum_deposit'] = $minimum_deposit;
 	$_SESSION['vp_s_balance_page_leave_confirm'] = $balance_page_leave_confirm;
-	$_SESSION['vp_s_stop_if_adblock'] = $stop_if_adblock;  
+	$_SESSION['vp_s_stop_if_adblock'] = $stop_if_adblock;
 }
 
 function SBFG_WP_poker_do_withdraw($address)

@@ -14,9 +14,18 @@ global $minimum_deposit;
 global $balance_page_leave_confirm;
 global $stop_if_adblock;
 
-$vidyen_max_bet = intval($_SESSION['vidyen_max_bet']);
+//error on frist try
+if (isset($_SESSION['vidyen_max_bet'])
+{
+  $vidyen_maximum_bet = $_SESSION['vidyen_max_bet']; //I belew this should work to put our own settings in. Or not. -Felty
+}
+else
+{
+  $vidyen_maximum_bet = 100;
+}
+
 $api_key = get_option('sfbg_sf_videopoker_api_key','');
-$maximum_bet = get_option('sfbg_sf_videopoker_maximum_bet', $vidyen_max_bet);
+$maximum_bet = get_option('sfbg_sf_videopoker_maximum_bet', $vidyen_maximum_bet);
 $minimum_initial_bonus = get_option('sfbg_sf_videopoker_minimum_initial_bonus',3);
 $maximum_initial_bonus = get_option('sfbg_sf_videopoker_maximum_initial_bonus',11);
 $bonuses_before_deposit = get_option('sfbg_sf_videopoker_bonuses_before_deposit',3);

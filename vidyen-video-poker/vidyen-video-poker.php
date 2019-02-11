@@ -204,6 +204,7 @@ function vidyen_video_poker_menu_page()
 	<p>Point ID is the point ID from the VidYen System. Found in Manage Points section of VYPS</p>
 	<p>Max bet is how much you want to let them bet in a single hand. Requires session refresh.</p>
 	<p>Win Multi is if you want to increase rewards with 2 for 2x the winnings.</p>
+	<p>NOTE: If you change this settings while a game is in play, they must close browser or tab and reload page as is server session based.</p>
 	<p>Requires the <a href="https://wordpress.org/plugins/vidyen-point-system-vyps/" target="_blank">VidYen Point System</a> for any point record keeping.</p>
 	<br><br><a href="https://wordpress.org/plugins/vidyen-point-system-vyps/" target="_blank"><img src="' . $vyps_logo_url . '"></a>
 	';

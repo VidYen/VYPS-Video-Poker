@@ -4,7 +4,7 @@
  * Plugin URI: http://vidyen.com
  * Description: A video poker game for the VidYen Point System.
  * Author: VidYen, LLC
- * Version: 0.0.35
+ * Version: 0.0.36
  * Author URI: http://VidYen.com
  * Text Domain: vidyen-video-poker
  * License: GPLv2

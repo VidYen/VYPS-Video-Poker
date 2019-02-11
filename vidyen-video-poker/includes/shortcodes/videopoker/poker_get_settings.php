@@ -15,7 +15,7 @@ global $balance_page_leave_confirm;
 global $stop_if_adblock;
 
 //error on frist try
-if (isset($_SESSION['vidyen_max_bet'])
+if (isset($_SESSION['vidyen_max_bet']))
 {
   $vidyen_maximum_bet = $_SESSION['vidyen_max_bet']; //I belew this should work to put our own settings in. Or not. -Felty
 }

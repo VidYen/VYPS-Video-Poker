@@ -98,7 +98,7 @@ function SBFG_WP_poker_settings_to_session()
   }
   else
   {
-    $maximum_bet = 100;
+    $vidyen_maximum_bet = 100;
   }
 
   $maximum_bet = $vidyen_maximum_bet; //Prolly not needed.

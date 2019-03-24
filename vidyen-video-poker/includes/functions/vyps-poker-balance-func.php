@@ -20,8 +20,8 @@ function vidyen_poker_balance_func()
 		return 0;
 	}
 
-	//$pointID = $atts['pid'];
-	$pointID = vyps_poker_pid_pull(); //This is my $wpdb function to the pid
+	//$point_id = $atts['pid'];
+	$point_id = vyps_poker_pid_pull(); //This is my $wpdb function to the pid
 	$maximum_bet = vyps_poker_max_bet_pull(); //This is the $wpdb call to the max bet WCCW
 	$win_multi = vyps_poker_multi_pull(); //Win multi for adjust winnings
 	$userID = get_current_user_id();
@@ -31,7 +31,7 @@ function vidyen_poker_balance_func()
 	$table_name_log = $wpdb->prefix . 'vyps_points_log';
 	$table_name_points = $wpdb->prefix . 'vyps_points';
 
-	$sourcePointID = $pointID; //reuse of code //I do not mind $pointID being called $sourcePointID rather than the current versus userID semantic.
+	$sourcePointID = $point_id; //reuse of code //I do not mind $point_id being called $sourcePointID rather than the current versus userID semantic.
 
 	//name and icon
 
@@ -46,7 +46,7 @@ function vidyen_poker_balance_func()
 	$sourceIcon = $wpdb->get_var( $sourceIcon_query_prepared );
 
 	//balance
-	//$balance_points = $wpdb->get_var( "SELECT sum(points_amount) FROM $table_vyps_log WHERE user_id = $userID AND points = $pointID"); //Oooh. I love it when I get my variable names the same.
+	//$balance_points = $wpdb->get_var( "SELECT sum(points_amount) FROM $table_vyps_log WHERE user_id = $userID AND points = $point_id"); //Oooh. I love it when I get my variable names the same.
 	$balance_points_query = "SELECT sum(points_amount) FROM ". $table_name_log . " WHERE user_id = %d AND point_id = %d";
 	$balance_points_query_prepared = $wpdb->prepare( $balance_points_query, $userID, $sourcePointID ); //NOTE: Originally this said $current_user_id but although I could pass it through to something else it would not be true if admin specified a UID. Ergo it should just say it $userID
 	$balance_points = $wpdb->get_var( $balance_points_query_prepared );
